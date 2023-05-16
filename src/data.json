@@ -1,0 +1,338 @@
+{
+  "questions": [
+    {
+      "id": "kJO8umtEoR8tzXzufCQ_Yf",
+      "title": "How to sort an array in JavaScript?",
+      "content": "I have an array of numbers and I want to sort it in ascending order. What is the best way to achieve this in JavaScript?",
+      "userId": "Erb8FeeTAYgttYuL4V2fc",
+      "datePosted": "2023-04-13T09:07:40Z",
+      "isEdited": true,
+      "dateEdited": "2023-04-13T10:01:40Z",
+      "ratings": [],
+      "categories": ["programming", "javascript"]
+    },
+    {
+      "id": "Xoh9vB8Va4FteB_2Xn5xl",
+      "title": "How to handle exceptions in Python?",
+      "content": "I'm new to Python and I want to learn how to handle exceptions properly. Can someone provide examples and best practices?",
+      "userId": "uKVgbjiMjB_SFc6O4Vo63",
+      "datePosted": "2023-04-25T02:45:32Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "python"]
+    },
+    {
+      "id": "PcmcmxJBl_y0nEVdK4-IpM",
+      "title": "How to create a responsive website layout?",
+      "content": "I'm looking for ways to create a responsive website layout using HTML and CSS. Any tips or recommended frameworks?",
+      "userId": "CrnneaMzvKzVIcP3ZCUre",
+      "datePosted": "2023-04-13T01:00:31Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "design"]
+    },
+    {
+      "id": "IOmM46qATed-sJ5dfBqg0d",
+      "title": "How to convert a string to lowercase in Java?",
+      "content": "I have a string and I need to convert it to lowercase in Java. What is the simplest way to achieve this?",
+      "userId": "vosKbJSSxA1urvwQGUn3f",
+      "datePosted": "2023-04-12T05:05:47Z",
+      "isEdited": true,
+      "dateEdited": "2023-04-22T10:06:24Z",
+      "ratings": [],
+      "categories": ["programming", "java"]
+    },
+    {
+      "id": "YNc6yra9SpwmhEZjR07klj",
+      "title": "How to use loops in JavaScript?",
+      "content": "I'm struggling to understand how to use loops in JavaScript. Can someone explain the different types of loops and their syntax?",
+      "userId": "dPEM9tSArX95DuN1jvxN6",
+      "datePosted": "2023-04-25T07:50:21Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "javascript"]
+    },
+    {
+      "id": "qnEjJfzJGhx-0ZIMfEda6a",
+      "title": "How to install packages using pip?",
+      "content": "I'm new to Python and I want to know how to install packages using pip. Can someone provide step-by-step instructions?",
+      "userId": "62dTNAyryxVPba6_6sUki",
+      "datePosted": "2023-04-19T05:19:31Z",
+      "isEdited": true,
+      "dateEdited": "2023-04-21T15:02:16Z",
+      "ratings": [],
+      "categories": ["programming", "python"]
+    },
+    {
+      "id": "SzoJx9aBkwLXfYZXexCybj",
+      "title": "How to handle click events in React?",
+      "content": "I'm working on a React application and I need to handle click events on certain elements. What is the recommended approach?",
+      "userId": "aMwy8sQwCtUf12ct8107c",
+      "datePosted": "2023-04-10T09:24:11Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "javascript", "react.js"]
+    },
+    {
+      "id": "NIsMQHThc0qjDQBBEFbWfT",
+      "title": "How to retrieve data from an API in Python?",
+      "content": "I want to fetch data from an API using Python. What libraries or methods should I use?",
+      "userId": "wZKXG_OQ6pUSNGW-_wlY7",
+      "datePosted": "2023-04-19T02:34:15Z",
+      "isEdited": true,
+      "dateEdited": "2023-04-21T21:45:05Z",
+      "ratings": [],
+      "categories": ["programming", "python", "api"]
+    },
+    {
+      "id": "wzsB2WLDN5qXGfYSUk2ZcL",
+      "title": "How to create a new branch in Git?",
+      "content": "I'm working on a Git repository and I want to create a new branch. What is the Git command to accomplish this?",
+      "userId": "rSepmZNHpOU5YRQmEfWGk",
+      "datePosted": "2023-04-22T21:46:00Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "git"]
+    },
+    {
+      "id": "3v3D6cVwV5DybyoyQvbohh",
+      "title": "How to handle null values in SQL queries?",
+      "content": "I have a SQL query that involves fields that may contain null values. How should I handle these null values?",
+      "userId": "JMBbA023TX47kEw4Mzz-L",
+      "datePosted": "2023-05-07T15:55:00Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "sql"]
+    },
+    {
+      "id": "5nyXekUJbk0Uv3IThfC-R",
+      "title": "How to optimize a website for better performance?",
+      "content": "I have a website that loads slowly. What are some techniques to optimize it for better performance?",
+      "userId": "Erb8FeeTAYgttYuL4V2fc",
+      "datePosted": "2023-04-22T15:51:06Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "performance"]
+    },
+    {
+      "id": "9WGYw_pZPPplIhQcFCbD-",
+      "title": "Best practices for securing an API?",
+      "content": "I'm building an API for my application. What are the best practices to ensure its security?",
+      "userId": "uKVgbjiMjB_SFc6O4Vo63",
+      "datePosted": "2023-04-11T11:46:03Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "api"]
+    },
+    {
+      "id": "h0dBwh3-nMDDqVYsEED0L",
+      "title": "How to implement authentication in a Node.js application?",
+      "content": "I'm working on a Node.js application and need to implement user authentication. What are some recommended approaches or libraries for this?",
+      "userId": "CrnneaMzvKzVIcP3ZCUre",
+      "datePosted": "2023-04-19T08:32:05Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "node"]
+    },
+    {
+      "id": "lH0fNWBBJy_UlgLa_m0a3",
+      "title": "What are the advantages of using a NoSQL database?",
+      "content": "I'm considering using a NoSQL database for my project. Can someone explain the advantages it offers over traditional SQL databases?",
+      "userId": "vosKbJSSxA1urvwQGUn3f",
+      "datePosted": "2023-04-20T05:58:35Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "nosql"]
+    },
+    {
+      "id": "PN9zyL_ZdN0aFmydCgbyJ",
+      "title": "How to deploy a React app to a production server?",
+      "content": "I have developed a React application and now I want to deploy it to a production server. What are the recommended steps to do this?",
+      "userId": "dPEM9tSArX95DuN1jvxN6",
+      "datePosted": "2023-04-25T12:11:32Z",
+      "isEdited": false,
+      "ratings": [],
+      "categories": ["programming", "javascript", "react.js"]
+    }
+  ],
+  "answers": [
+    {
+      "id": "9XbN2c43r5a8wRzP7qF6K",
+      "userId": "Erb8FeeTAYgttYuL4V2fc",
+      "questionId": "kJO8umtEoR8tzXzufCQ_Yf",
+      "content": "To sort an array in JavaScript in ascending order, you can use the `Array.prototype.sort()` method. Here's an example: const numbers = [3, 1, 2]; numbers.sort((a, b) => a - b); console.log(numbers); // Output: [1, 2, 3]. This method sorts the elements of the array in place and returns the sorted array.",
+      "ratings": [],
+      "isEdited": false,
+      "datePosted": "2023-05-06T18:13:45Z"
+    },
+    {
+      "id": "8XnR7uK4j2a3wQmP9qF6B",
+      "userId": "CrnneaMzvKzVIcP3ZCUre",
+      "questionId": "Xoh9vB8Va4FteB_2Xn5xl",
+      "content": "To handle exceptions in Python, you can use the `try-except` statement. Here's an example: try: # Code that might raise an exception. x = int('abc') except ValueError: print('Error: Invalid value'). In this example, if a `ValueError` occurs while converting a string to an integer, the code inside the `except` block will be executed to handle the exception.",
+      "ratings": [],
+      "isEdited": false,
+      "datePosted": "2023-05-06T11:14:28Z"
+    },
+    {
+      "id": "HJ8FtKaXhNF6ojPYfJc7B",
+      "userId": "wZKXG_OQ6pUSNGW-_wlY7",
+      "questionId": "PcmcmxJBl_y0nEVdK4-IpM",
+      "content": "To create a responsive website layout using HTML and CSS, you can consider the following techniques: 1. Use CSS frameworks like Bootstrap or Foundation, which provide pre-built responsive components and grids. 2. Utilize CSS flexbox or grid layout to create flexible and responsive designs. 3. Implement media queries to define different styles based on the device's screen size. 4. Optimize images for different resolutions using the 'srcset' attribute. 5. Ensure the website's content adjusts well to different viewport sizes. By applying these practices, you can achieve a responsive website layout that adapts to various devices and screen sizes.",
+      "ratings": [],
+      "isEdited": false,
+      "datePosted": "2023-05-10T20:52:53Z"
+    },
+    {
+      "id": "Lfp6tB57NwCYfZDxkJ7G3",
+      "userId": "62dTNAyryxVPba6_6sUki",
+      "questionId": "PcmcmxJBl_y0nEVdK4-IpM",
+      "content": "When it comes to creating a responsive website layout using HTML and CSS, here are a couple of additional suggestions: 1. Design with a mobile-first approach, focusing on the smallest screens first and gradually adding enhancements for larger devices. 2. Make use of CSS media queries to target specific screen sizes and apply appropriate styling rules. 3. Use relative units like percentages or 'em' instead of fixed units like pixels to ensure elements scale properly. 4. Test your layout across different devices and browsers to ensure consistent behavior. By incorporatings these []echniques into your development process, you can create a responsive website layout that provides a seamless user experience on various devices.",
+      "ratings": [],
+      "isEdited": false,
+      "datePosted": "2023-05-04T07:07:44Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "Erb8FeeTAYgttYuL4V2fc",
+      "email": "user1@example.com",
+      "password": "password1",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/1.jpg",
+      "username": "DarkKnight1"
+    },
+    {
+      "id": "uKVgbjiMjB_SFc6O4Vo63",
+      "email": "user2@example.com",
+      "password": "password2",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/2.jpg",
+      "username": "EasterBunny11"
+    },
+    {
+      "id": "CrnneaMzvKzVIcP3ZCUre",
+      "email": "user3@example.com",
+      "password": "password3",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/3.jpg",
+      "username": "JohnnyBoy"
+    },
+    {
+      "id": "vosKbJSSxA1urvwQGUn3f",
+      "email": "user4@example.com",
+      "password": "password4",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/4.jpg",
+      "username": "KittyLover21"
+    },
+    {
+      "id": "dPEM9tSArX95DuN1jvxN6",
+      "email": "user5@example.com",
+      "password": "password5",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/5.jpg",
+      "username": "AwesomeGamer7"
+    },
+    {
+      "id": "62dTNAyryxVPba6_6sUki",
+      "email": "user6@example.com",
+      "password": "password6",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/6.jpg",
+      "username": "PandaLover99"
+    },
+    {
+      "id": "aMwy8sQwCtUf12ct8107c",
+      "email": "user7@example.com",
+      "password": "password7",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/7.jpg",
+      "username": "ViperStrike3"
+    },
+    {
+      "id": "wZKXG_OQ6pUSNGW-_wlY7",
+      "email": "user8@example.com",
+      "password": "password8",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/8.jpg",
+      "username": "GoldenGirl"
+    },
+    {
+      "id": "rSepmZNHpOU5YRQmEfWGk",
+      "email": "user9@example.com",
+      "password": "password9",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/9.jpg",
+      "username": "FalconRunner"
+    },
+    {
+      "id": "JMBbA023TX47kEw4Mzz-L",
+      "email": "user10@example.com",
+      "password": "password10",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/10.jpg",
+      "username": "BlazingSunset"
+    },
+    {
+      "id": "qLf1H-hqJpYgg3Io0lvEB",
+      "email": "user11@example.com",
+      "password": "password11",
+      "avatarUrl": "https://ui-avatars.com/api/?name=S&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "StarGazer"
+    },
+    {
+      "id": "FeatN2kjW2uGbSmpFux3r",
+      "email": "user12@example.com",
+      "password": "password12",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Z&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "ZorroMaster"
+    },
+    {
+      "id": "6T8aGoWILqv08QMIxiotY",
+      "email": "user13@example.com",
+      "password": "password13",
+      "avatarUrl": "https://ui-avatars.com/api/?name=M&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "MagicalDreamer"
+    },
+    {
+      "id": "d-03rCUCA_QARi_wp47Ze",
+      "email": "user14@example.com",
+      "password": "password14",
+      "avatarUrl": "https://ui-avatars.com/api/?name=H&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "HeroicLegend"
+    },
+    {
+      "id": "qsv1yBAuEX_YnNx80vi5T",
+      "email": "user15@example.com",
+      "password": "password15",
+      "avatarUrl": "https://ui-avatars.com/api/?name=N&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "NinjaWarrior"
+    },
+    {
+      "id": "ejohD04sFgwo25tT9aX9S",
+      "email": "user16@example.com",
+      "password": "password16",
+      "avatarUrl": "https://ui-avatars.com/api/?name=W&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "WiseWizard"
+    },
+    {
+      "id": "pJHDCQrBqdTW9KRo7aOUm",
+      "email": "user17@example.com",
+      "password": "password17",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Q&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "Quicksilver"
+    },
+    {
+      "id": "xqfQjk-YKTTqHPewSZqob",
+      "email": "user18@example.com",
+      "password": "password18",
+      "avatarUrl": "https://ui-avatars.com/api/?name=I&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "InfiniteJourney"
+    },
+    {
+      "id": "yhjwibzHmcaU2A3Hj8S2W",
+      "email": "user19@example.com",
+      "password": "password19",
+      "avatarUrl": "https://ui-avatars.com/api/?name=T&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "TimeTraveler"
+    },
+    {
+      "id": "dxRAHYt78lgawXuYgAwW5",
+      "email": "user20@example.com",
+      "password": "password20",
+      "avatarUrl": "https://ui-avatars.com/api/?name=L&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "username": "LuckyCharm"
+    }
+  ]
+}
