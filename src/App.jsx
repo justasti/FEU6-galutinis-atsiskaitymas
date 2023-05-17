@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/main-layout/main.layout'
-import { QuestionsList, QuestionPage } from './features'
+import { QuestionsList, QuestionPage, LoginPage, SignupPage } from './features'
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +22,14 @@ function App() {
           element: <QuestionPage />,
         },
       ],
+    },
+    {
+      path: '/login',
+      element: <LoginPage />,
+    },
+    {
+      path: '/signup',
+      element: <SignupPage />,
     },
   ])
   return <RouterProvider router={router} />
