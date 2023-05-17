@@ -9,7 +9,7 @@ const SideNav = () => {
         <li>All</li>
         <li>Tags</li>
         <ul>
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <li key={tag}>{tag}</li>
           ))}
         </ul>
