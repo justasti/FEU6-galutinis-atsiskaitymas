@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledQuestionPreview = styled.div`
-  color: #555;
   width: 100%;
   display: flex;
   align-items: center;

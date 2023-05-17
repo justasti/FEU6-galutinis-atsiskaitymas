@@ -1,4 +1,4 @@
-import { QuestionPreview } from '../../'
+import { QuestionPreview } from '../..'
 import { useGetQuestionsQuery } from '../questions.api'
 import { QuestionsContainer } from './questions-list.styles'
 

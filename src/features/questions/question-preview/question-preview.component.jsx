@@ -4,6 +4,7 @@ import { useGetUserByIdQuery } from '../../users/users.api'
 import { formatDistanceToNow } from 'date-fns'
 import { faComment, faStar } from '@fortawesome/free-regular-svg-icons'
 import { StyledQuestionPreview } from './question-preview.styles'
+import { Link } from 'react-router-dom'
 
 const QuestionPreview = ({ question }) => {
   const { data: answers, isLoading: answerIsLoading } =
@@ -19,7 +20,9 @@ const QuestionPreview = ({ question }) => {
     <StyledQuestionPreview>
       <img src={askedBy?.avatarUrl} alt={askedBy?.username} />
       <div className='question-info'>
-        <h3>{question.title}</h3>
+        <h3>
+          <Link to={`/questions/${question.id}`}>{question.title}</Link>
+        </h3>
         <p>
           by <strong>{askedBy?.username}</strong> {dateDifference}
         </p>
