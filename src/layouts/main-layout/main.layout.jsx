@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom'
+import { Header } from '../../features'
 const MainLayout = () => {
   return (
     <>
-      <header>Header</header>
+      <Header>Header</Header>
       <main>
         <aside>SideNav</aside>
         <Outlet />
