@@ -4,6 +4,7 @@ export const DetailedQuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 50px;
   h2 {
     font-size: 2.5rem;
     font-weight: 500;
@@ -17,7 +18,7 @@ export const DetailedQuestionContainer = styled.div`
     padding-bottom: 15px;
   }
   .question-info {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     gap: 20px;

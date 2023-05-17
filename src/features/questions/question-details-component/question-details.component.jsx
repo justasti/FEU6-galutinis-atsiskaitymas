@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom'
 import { useGetQuestionByIdQuery } from '../questions.api'
 import { formatDistanceToNow } from 'date-fns'
 import { DetailedQuestionContainer } from './question-details.styles'
@@ -7,8 +6,7 @@ import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { useGetUserByIdQuery } from '../../users/users.api'
 import { skipToken } from '@reduxjs/toolkit/dist/query'
 
-const QuestionDetailsPage = () => {
-  const { id } = useParams()
+const QuestionDetails = ({ id }) => {
   const {
     data: detailedQuestion,
     isLoading: questionIsLoading,
@@ -66,4 +64,4 @@ const QuestionDetailsPage = () => {
     </>
   )
 }
-export default QuestionDetailsPage
+export default QuestionDetails

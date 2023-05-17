@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/main-layout/main.layout'
-import { QuestionsList, QuestionDetailsPage } from './features'
+import { QuestionsList, QuestionPage } from './features'
 
 function App() {
   const router = createBrowserRouter([
@@ -19,7 +19,7 @@ function App() {
         },
         {
           path: '/questions/:id',
-          element: <QuestionDetailsPage />,
+          element: <QuestionPage />,
         },
       ],
     },
