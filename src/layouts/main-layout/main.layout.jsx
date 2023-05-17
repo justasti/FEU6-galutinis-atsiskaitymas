@@ -1,15 +1,16 @@
 import { Outlet } from 'react-router-dom'
 import { Footer, Header, SideNav } from '../../features'
+import { MainContentContainer } from './main-layout.styles'
 const MainLayout = () => {
   return (
     <>
       <Header>Header</Header>
-      <main>
+      <MainContentContainer>
         <SideNav>SideNav</SideNav>
         <section>
           <Outlet />
         </section>
-      </main>
+      </MainContentContainer>
       <Footer>Footer</Footer>
     </>
   )
