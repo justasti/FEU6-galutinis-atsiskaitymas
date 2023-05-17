@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const questionsApiSlice = createApi({
+const questionsApi = createApi({
   reducerPath: 'questionsApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/questions' }),
-  tagTypes: ['Questions'],
+  tagTypes: ['Answers'],
   endpoints: builder => ({
     getQuestions: builder.query({
       query: () => '/',
@@ -12,5 +12,5 @@ const questionsApiSlice = createApi({
   })
 })
 
-export const { useGetQuestionsQuery } = questionsApiSlice
-export default questionsApiSlice
+export const { useGetQuestionsQuery } = questionsApi
+export default questionsApi

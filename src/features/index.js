@@ -1,3 +1,5 @@
 export { default as Header } from '../features/header/header.component'
 export { default as Footer } from '../features/footer/footer.component'
 export { default as SideNav } from '../features/sidenav/sidenav.component'
+export { default as QuestionPreview } from '../features/questions/question-preview/question-preview.component'
+export { default as QuestionsList } from '../features/questions/questions-list/questions-list.component'

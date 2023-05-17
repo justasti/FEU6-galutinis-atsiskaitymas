@@ -1,4 +1,6 @@
-import { useGetQuestionsQuery } from '../questionsApi.slice'
+import { QuestionPreview } from '../../'
+import { useGetQuestionsQuery } from '../questionsApi'
+import { QuestionsContainer } from './questions-list.styles'
 
 const QuestionsList = () => {
   const {
@@ -8,14 +10,14 @@ const QuestionsList = () => {
     isError,
   } = useGetQuestionsQuery()
   return (
-    <div>
+    <QuestionsContainer>
       {isLoading && <p>Loading...</p>}
       {isSuccess &&
         questions.map((question) => (
-          <div key={question.id}>{question.title}</div>
+          <QuestionPreview question={question} key={question.id} />
         ))}
       {isError && <p>Error fetching data!</p>}
-    </div>
+    </QuestionsContainer>
   )
 }
 export default QuestionsList

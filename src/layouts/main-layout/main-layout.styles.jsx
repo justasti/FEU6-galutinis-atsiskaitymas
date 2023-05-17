@@ -5,4 +5,7 @@ export const MainContentContainer = styled.main`
   padding: 20px 50px;
   display: flex;
   gap: 20px;
+  section {
+    flex: 1;
+  }
 `
