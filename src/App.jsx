@@ -1,5 +1,6 @@
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
+import MainLayout from './layouts/main-layout/main.layout'
 
 function App() {
   const router = createBrowserRouter([
@@ -7,9 +8,15 @@ function App() {
       path: '/',
       element: (
         <>
-          <p>Hello</p>
+          <MainLayout />
         </>
       ),
+      children: [
+        {
+          path: '/',
+          element: <>This goes in Outlet</>,
+        },
+      ],
     },
   ])
   return <RouterProvider router={router} />
