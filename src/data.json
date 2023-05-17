@@ -158,9 +158,9 @@
   "answers": [
     {
       "id": "9XbN2c43r5a8wRzP7qF6K",
-      "userId": "Erb8FeeTAYgttYuL4V2fc",
+      "userId": "d-03rCUCA_QARi_wp47Ze",
       "questionId": "kJO8umtEoR8tzXzufCQ_Yf",
-      "content": "To sort an array in JavaScript in ascending order, you can use the `Array.prototype.sort()` method. Here's an example: const numbers = [3, 1, 2]; numbers.sort((a, b) => a - b); console.log(numbers); // Output: [1, 2, 3]. This method sorts the elements of the array in place and returns the sorted array.",
+      "content": "To sort an array in JavaScript in ascending order, you can use the `1()` method. Here's an example: const numbers = [3, 1, 2]; numbers.sort((a, b) => a - b); console.log(numbers); // Output: [1, 2, 3]. This method sorts the elements of the array in place and returns the sorted array.",
       "ratings": [],
       "isEdited": false,
       "datePosted": "2023-05-06T18:13:45Z"
@@ -171,7 +171,8 @@
       "questionId": "Xoh9vB8Va4FteB_2Xn5xl",
       "content": "To handle exceptions in Python, you can use the `try-except` statement. Here's an example: try: # Code that might raise an exception. x = int('abc') except ValueError: print('Error: Invalid value'). In this example, if a `ValueError` occurs while converting a string to an integer, the code inside the `except` block will be executed to handle the exception.",
       "ratings": [],
-      "isEdited": false,
+      "isEdited": true,
+      "dateEdited": "2023-05-06T11:18:18Z",
       "datePosted": "2023-05-06T11:14:28Z"
     },
     {
@@ -187,7 +188,7 @@
       "id": "Lfp6tB57NwCYfZDxkJ7G3",
       "userId": "62dTNAyryxVPba6_6sUki",
       "questionId": "PcmcmxJBl_y0nEVdK4-IpM",
-      "content": "When it comes to creating a responsive website layout using HTML and CSS, here are a couple of additional suggestions: 1. Design with a mobile-first approach, focusing on the smallest screens first and gradually adding enhancements for larger devices. 2. Make use of CSS media queries to target specific screen sizes and apply appropriate styling rules. 3. Use relative units like percentages or 'em' instead of fixed units like pixels to ensure elements scale properly. 4. Test your layout across different devices and browsers to ensure consistent behavior. By incorporatings these []echniques into your development process, you can create a responsive website layout that provides a seamless user experience on various devices.",
+      "content": "When it comes to creating a responsive website layout using HTML and CSS, here are a couple of additional suggestions: 1. Design with a mobile-first approach, focusing on the smallest screens first and gradually adding enhancements for larger devices. 2. Make use of CSS media queries to target specific screen sizes and apply appropriate styling rules. 3. Use relative units like percentages or 'em' instead of fixed units like pixels to ensure elements scale properly. 4. Test your layout across different devices and browsers to ensure consistent behavior. By incorporatings these techniques into your development process, you can create a responsive website layout that provides a seamless user experience on various devices.",
       "ratings": [],
       "isEdited": false,
       "datePosted": "2023-05-04T07:07:44Z"

@@ -7,6 +7,11 @@ const questionsApi = createApi({
   endpoints: builder => ({
     getQuestions: builder.query({
       query: () => '/',
+      providesTags: ['Questions'],
+      keepUnusedDataFor: 300
+    }),
+    getQuestionById: builder.query({
+      query: (id) => `/${id}`,
       providesTags: ['Questions']
     }),
     getQuestionsTags: builder.query({
@@ -17,5 +22,5 @@ const questionsApi = createApi({
   })
 })
 
-export const { useGetQuestionsQuery, useGetQuestionsTagsQuery } = questionsApi
+export const { useGetQuestionsQuery, useGetQuestionByIdQuery, useGetQuestionsTagsQuery } = questionsApi
 export default questionsApi
