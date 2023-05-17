@@ -1,6 +1,7 @@
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/main-layout/main.layout'
+import QuestionsList from './features/questions/questions-list/questions-list.component'
 
 function App() {
   const router = createBrowserRouter([
@@ -14,7 +15,7 @@ function App() {
       children: [
         {
           path: '/',
-          element: <>This goes in Outlet</>,
+          element: <QuestionsList />,
         },
       ],
     },
