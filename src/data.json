@@ -9,7 +9,7 @@
       "isEdited": true,
       "dateEdited": "2023-04-13T10:01:40Z",
       "ratings": [],
-      "categories": ["programming", "javascript"]
+      "tag": "javascript"
     },
     {
       "id": "Xoh9vB8Va4FteB_2Xn5xl",
@@ -19,7 +19,7 @@
       "datePosted": "2023-04-25T02:45:32Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "python"]
+      "tag": "python"
     },
     {
       "id": "PcmcmxJBl_y0nEVdK4-IpM",
@@ -29,7 +29,7 @@
       "datePosted": "2023-04-13T01:00:31Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "design"]
+      "tag": "design"
     },
     {
       "id": "IOmM46qATed-sJ5dfBqg0d",
@@ -40,7 +40,7 @@
       "isEdited": true,
       "dateEdited": "2023-04-22T10:06:24Z",
       "ratings": [],
-      "categories": ["programming", "java"]
+      "tag": "java"
     },
     {
       "id": "YNc6yra9SpwmhEZjR07klj",
@@ -50,7 +50,7 @@
       "datePosted": "2023-04-25T07:50:21Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "javascript"]
+      "tag": "javascript"
     },
     {
       "id": "qnEjJfzJGhx-0ZIMfEda6a",
@@ -61,7 +61,7 @@
       "isEdited": true,
       "dateEdited": "2023-04-21T15:02:16Z",
       "ratings": [],
-      "categories": ["programming", "python"]
+      "tag": "python"
     },
     {
       "id": "SzoJx9aBkwLXfYZXexCybj",
@@ -71,7 +71,7 @@
       "datePosted": "2023-04-10T09:24:11Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "javascript", "react.js"]
+      "tag": "react.js"
     },
     {
       "id": "NIsMQHThc0qjDQBBEFbWfT",
@@ -82,7 +82,7 @@
       "isEdited": true,
       "dateEdited": "2023-04-21T21:45:05Z",
       "ratings": [],
-      "categories": ["programming", "python", "api"]
+      "tag": "python"
     },
     {
       "id": "wzsB2WLDN5qXGfYSUk2ZcL",
@@ -92,7 +92,7 @@
       "datePosted": "2023-04-22T21:46:00Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "git"]
+      "tag": "git"
     },
     {
       "id": "3v3D6cVwV5DybyoyQvbohh",
@@ -102,57 +102,57 @@
       "datePosted": "2023-05-07T15:55:00Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "sql"]
+      "tag": "sql"
     },
     {
       "id": "5nyXekUJbk0Uv3IThfC-R",
       "title": "How to optimize a website for better performance?",
       "content": "I have a website that loads slowly. What are some techniques to optimize it for better performance?",
-      "userId": "Erb8FeeTAYgttYuL4V2fc",
+      "userId": "qLf1H-hqJpYgg3Io0lvEB",
       "datePosted": "2023-04-22T15:51:06Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "performance"]
+      "tag": "performance"
     },
     {
       "id": "9WGYw_pZPPplIhQcFCbD-",
       "title": "Best practices for securing an API?",
       "content": "I'm building an API for my application. What are the best practices to ensure its security?",
-      "userId": "uKVgbjiMjB_SFc6O4Vo63",
+      "userId": "FeatN2kjW2uGbSmpFux3r",
       "datePosted": "2023-04-11T11:46:03Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "api"]
+      "tag": "api"
     },
     {
       "id": "h0dBwh3-nMDDqVYsEED0L",
       "title": "How to implement authentication in a Node.js application?",
       "content": "I'm working on a Node.js application and need to implement user authentication. What are some recommended approaches or libraries for this?",
-      "userId": "CrnneaMzvKzVIcP3ZCUre",
+      "userId": "6T8aGoWILqv08QMIxiotY",
       "datePosted": "2023-04-19T08:32:05Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "node"]
+      "tag": "node.js"
     },
     {
       "id": "lH0fNWBBJy_UlgLa_m0a3",
       "title": "What are the advantages of using a NoSQL database?",
       "content": "I'm considering using a NoSQL database for my project. Can someone explain the advantages it offers over traditional SQL databases?",
-      "userId": "vosKbJSSxA1urvwQGUn3f",
+      "userId": "d-03rCUCA_QARi_wp47Ze",
       "datePosted": "2023-04-20T05:58:35Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "nosql"]
+      "tag": "nosql"
     },
     {
       "id": "PN9zyL_ZdN0aFmydCgbyJ",
       "title": "How to deploy a React app to a production server?",
       "content": "I have developed a React application and now I want to deploy it to a production server. What are the recommended steps to do this?",
-      "userId": "dPEM9tSArX95DuN1jvxN6",
+      "userId": "qsv1yBAuEX_YnNx80vi5T",
       "datePosted": "2023-04-25T12:11:32Z",
       "isEdited": false,
       "ratings": [],
-      "categories": ["programming", "javascript", "react.js"]
+      "tag": "react.js"
     }
   ],
   "answers": [
@@ -268,70 +268,70 @@
       "id": "qLf1H-hqJpYgg3Io0lvEB",
       "email": "user11@example.com",
       "password": "password11",
-      "avatarUrl": "https://ui-avatars.com/api/?name=S&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=S&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "StarGazer"
     },
     {
       "id": "FeatN2kjW2uGbSmpFux3r",
       "email": "user12@example.com",
       "password": "password12",
-      "avatarUrl": "https://ui-avatars.com/api/?name=Z&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Z&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "ZorroMaster"
     },
     {
       "id": "6T8aGoWILqv08QMIxiotY",
       "email": "user13@example.com",
       "password": "password13",
-      "avatarUrl": "https://ui-avatars.com/api/?name=M&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=M&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "MagicalDreamer"
     },
     {
       "id": "d-03rCUCA_QARi_wp47Ze",
       "email": "user14@example.com",
       "password": "password14",
-      "avatarUrl": "https://ui-avatars.com/api/?name=H&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=H&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "HeroicLegend"
     },
     {
       "id": "qsv1yBAuEX_YnNx80vi5T",
       "email": "user15@example.com",
       "password": "password15",
-      "avatarUrl": "https://ui-avatars.com/api/?name=N&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=N&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "NinjaWarrior"
     },
     {
       "id": "ejohD04sFgwo25tT9aX9S",
       "email": "user16@example.com",
       "password": "password16",
-      "avatarUrl": "https://ui-avatars.com/api/?name=W&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=W&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "WiseWizard"
     },
     {
       "id": "pJHDCQrBqdTW9KRo7aOUm",
       "email": "user17@example.com",
       "password": "password17",
-      "avatarUrl": "https://ui-avatars.com/api/?name=Q&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Q&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "Quicksilver"
     },
     {
       "id": "xqfQjk-YKTTqHPewSZqob",
       "email": "user18@example.com",
       "password": "password18",
-      "avatarUrl": "https://ui-avatars.com/api/?name=I&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=I&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "InfiniteJourney"
     },
     {
       "id": "yhjwibzHmcaU2A3Hj8S2W",
       "email": "user19@example.com",
       "password": "password19",
-      "avatarUrl": "https://ui-avatars.com/api/?name=T&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=T&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "TimeTraveler"
     },
     {
       "id": "dxRAHYt78lgawXuYgAwW5",
       "email": "user20@example.com",
       "password": "password20",
-      "avatarUrl": "https://ui-avatars.com/api/?name=L&size=512&background=random&length=1&font-size=0.66&rounded=true&bold=true",
+      "avatarUrl": "https://ui-avatars.com/api/?name=L&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "LuckyCharm"
     }
   ]
