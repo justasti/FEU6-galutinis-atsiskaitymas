@@ -1,4 +1,4 @@
-import { useGetQuestionsTagsQuery } from '../questions/questionsApi'
+import { useGetQuestionsTagsQuery } from '../questions/questions.api'
 import { StyledSideNav } from './sidenav.styles'
 const SideNav = () => {
   const { data: tags } = useGetQuestionsTagsQuery()

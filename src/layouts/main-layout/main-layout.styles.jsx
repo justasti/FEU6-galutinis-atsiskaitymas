@@ -6,6 +6,9 @@ export const MainContentContainer = styled.main`
   display: flex;
   gap: 20px;
   section {
-    flex: 1;
+    flex-grow: 999;
+    flex-basis: 0;
+    padding-left: 20px;
+    border-left: 1px solid black;
   }
 `

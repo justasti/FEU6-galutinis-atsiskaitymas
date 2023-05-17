@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import questionsApi from '../features/questions/questionsApi';
+import questionsApi from '../features/questions/questions.api';
 import usersApi from '../features/users/users.api';
 import answersApi from '../features/answers/answers.api';
 

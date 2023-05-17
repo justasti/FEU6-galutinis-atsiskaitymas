@@ -1,5 +1,5 @@
 import { QuestionPreview } from '../../'
-import { useGetQuestionsQuery } from '../questionsApi'
+import { useGetQuestionsQuery } from '../questions.api'
 import { QuestionsContainer } from './questions-list.styles'
 
 const QuestionsList = () => {

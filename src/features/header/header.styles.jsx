@@ -8,4 +8,5 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 `
