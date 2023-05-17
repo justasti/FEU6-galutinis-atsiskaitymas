@@ -5,4 +5,5 @@ export const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid black;
 `

@@ -1,12 +1,14 @@
 import { Outlet } from 'react-router-dom'
-import { Footer, Header } from '../../features'
+import { Footer, Header, SideNav } from '../../features'
 const MainLayout = () => {
   return (
     <>
       <Header>Header</Header>
       <main>
-        <aside>SideNav</aside>
-        <Outlet />
+        <SideNav>SideNav</SideNav>
+        <section>
+          <Outlet />
+        </section>
       </main>
       <Footer>Footer</Footer>
     </>
