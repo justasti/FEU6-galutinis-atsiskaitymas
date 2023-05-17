@@ -3,14 +3,19 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const questionsApi = createApi({
   reducerPath: 'questionsApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/questions' }),
-  tagTypes: ['Answers'],
+  tagTypes: ['Questions', 'Tags'],
   endpoints: builder => ({
     getQuestions: builder.query({
       query: () => '/',
       providesTags: ['Questions']
+    }),
+    getQuestionsTags: builder.query({
+      query: () => '/',
+      providesTags: ['Tags'],
+      transformResponse: response => [...new Set(response.map(question => question.tag))].sort((a, b) => a.localeCompare(b))
     })
   })
 })
 
-export const { useGetQuestionsQuery } = questionsApi
+export const { useGetQuestionsQuery, useGetQuestionsTagsQuery } = questionsApi
 export default questionsApi
