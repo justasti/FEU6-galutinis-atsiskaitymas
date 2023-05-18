@@ -334,6 +334,13 @@
       "password": "password20",
       "avatarUrl": "https://ui-avatars.com/api/?name=L&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "LuckyCharm"
+    },
+    {
+      "email": "justas.tirevicius@gmail.com",
+      "username": "Justas",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Justas&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
+      "password": "asdasd",
+      "id": "1J__qRljs8mXF3k5UiA-W"
     }
   ]
 }

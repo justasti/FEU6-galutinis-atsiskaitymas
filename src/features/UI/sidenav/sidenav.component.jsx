@@ -1,4 +1,4 @@
-import { useGetQuestionsTagsQuery } from '../questions/questions.api'
+import { useGetQuestionsTagsQuery } from '../../questions/questions.api'
 import { StyledSideNav } from './sidenav.styles'
 import { Link } from 'react-router-dom'
 const SideNav = () => {
