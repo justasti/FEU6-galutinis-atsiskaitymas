@@ -334,6 +334,20 @@
       "password": "password20",
       "avatarUrl": "https://ui-avatars.com/api/?name=L&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "username": "LuckyCharm"
+    },
+    {
+      "email": "justas.tirevicius@gmail.com",
+      "username": "Justas adminas",
+      "avatarUrl": "https://nextluxury.com/wp-content/uploads/funny-profile-pictures-2.jpg",
+      "password": "qweqwe",
+      "id": "TT9GAI5fE5wl6LNJQ7Enw"
+    },
+    {
+      "email": "joksaitejudita@gmail.com",
+      "username": "admin",
+      "avatarUrl": "https://img.freepik.com/free-icon/user_318-159711.jpg",
+      "password": "asdasd",
+      "id": "1V3WyR4iyJJyhgqUyDDU9"
     }
   ]
 }

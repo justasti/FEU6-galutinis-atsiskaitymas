@@ -18,6 +18,7 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     const userPromise = dispatch(getUserByEmail(inputs.email))
     userPromise.then(({ payload }) => {
       const user = payload[0]

@@ -13,13 +13,16 @@ const usersApi = createApi({
       query: (id) => `/${id}`,
       providesTags: ['Users']
     }),
-    getUserByEmail: builder.query({
-      query: (email) => `?email=${email}`,
-      providesTags: ['Users'],
-      transformResponse: response => response[0]
+    createNewUser: builder.mutation({
+      query: (user) => ({
+        url: '/',
+        method: 'POST',
+        body: user
+      }),
+      invalidatesTags: ['Users']
     })
   })
 })
 
-export const { useGetUsersQuery, useGetUserByIdQuery, useGetUserByEmailQuery } = usersApi
+export const { useGetUsersQuery, useGetUserByIdQuery, useCreateNewUserMutation } = usersApi
 export default usersApi
