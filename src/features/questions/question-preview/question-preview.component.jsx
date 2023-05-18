@@ -5,13 +5,12 @@ import { formatDistanceToNow } from 'date-fns'
 import { faComment, faStar } from '@fortawesome/free-regular-svg-icons'
 import { StyledQuestionPreview } from './question-preview.styles'
 import { Link } from 'react-router-dom'
+import { QuestionTag } from '../../'
 
 const QuestionPreview = ({ question }) => {
   const { data: answers, isLoading: answerIsLoading } =
     useGetAnswersByQuestionIdQuery(question.id)
-  const { data: askedBy, isLoading: userIsLoading } = useGetUserByIdQuery(
-    question.userId
-  )
+  const { data: askedBy } = useGetUserByIdQuery(question.userId)
   const dateDifference = formatDistanceToNow(new Date(question.datePosted), {
     addSuffix: true,
     includeSeconds: true,
@@ -24,10 +23,14 @@ const QuestionPreview = ({ question }) => {
           <Link to={`/questions/${question.id}`}>{question.title}</Link>
         </h3>
         <p>
-          by <strong>{askedBy?.username}</strong> {dateDifference}
+          by{' '}
+          <strong>
+            <Link to={`/user/${askedBy?.id}`}>{askedBy?.username}</Link>
+          </strong>{' '}
+          {dateDifference}
         </p>
       </div>
-      <span className='question-tag'>{question.tag}</span>
+      <QuestionTag tag={question.tag} />
       <div className='question-stats'>
         <span>
           <FontAwesomeIcon icon={faComment} />

@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { useGetUserByIdQuery } from '../../users/users.api'
 import { skipToken } from '@reduxjs/toolkit/dist/query'
+import { Link } from 'react-router-dom'
+import { QuestionTag } from '../../'
 
 const QuestionDetails = ({ id }) => {
   const {
@@ -48,14 +50,19 @@ const QuestionDetails = ({ id }) => {
               <span>0</span>
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
-            <p className='question-content'>{detailedQuestion.content}</p>
+            <div className='question-content'>
+              <p>{detailedQuestion.content}</p>
+              <QuestionTag tag={detailedQuestion.tag} />
+            </div>
             <div className='author-info'>
               <p>asked {parsedAskedDate}</p>
-              {/* TODO add question tag under text */}
               <div>
                 <img src={askedBy?.avatarUrl} alt={askedBy?.username} />
                 <p>
-                  by <strong>{askedBy?.username}</strong>
+                  by{' '}
+                  <strong>
+                    <Link to={`/user/${askedBy?.id}`}>{askedBy?.username}</Link>
+                  </strong>
                 </p>
               </div>
             </div>
