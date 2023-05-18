@@ -21,15 +21,6 @@ export const StyledQuestionPreview = styled.div`
       font-size: 0.8rem;
     }
   }
-  .question-tag {
-    padding: 5px 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.75px;
-    border-radius: 8px;
-    background-color: yellow;
-  }
   .question-stats {
     display: flex;
     gap: 10px;

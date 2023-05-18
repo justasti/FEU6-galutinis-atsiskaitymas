@@ -38,6 +38,9 @@ export const DetailedQuestionContainer = styled.div`
       font-size: 1.25rem;
       line-height: 1.5;
       flex: 1;
+      p {
+        margin-bottom: 15px;
+      }
     }
     .author-info {
       background-color: #fff6c5;

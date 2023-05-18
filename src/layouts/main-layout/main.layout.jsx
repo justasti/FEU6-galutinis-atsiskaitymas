@@ -7,7 +7,7 @@ const MainLayout = () => {
       <Header>Header</Header>
       <MainContentContainer>
         <SideNav>SideNav</SideNav>
-        <section>
+        <section className='main-section'>
           <Outlet />
         </section>
       </MainContentContainer>
