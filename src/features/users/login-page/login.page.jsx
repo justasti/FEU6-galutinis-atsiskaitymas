@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserByEmail, login } from '../users.slice'
-import { useNavigate } from 'react-router-dom'
+import { unstable_HistoryRouter, useNavigate } from 'react-router-dom'
 const LoginPage = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -26,7 +26,7 @@ const LoginPage = () => {
       const user = payload[0]
       if (user?.password === inputs.password) {
         dispatch(login(user))
-        navigate('/')
+        navigate(-1)
       } else {
         console.log('incorrect')
       }
