@@ -5,8 +5,11 @@ import { AuthMain } from '../../../layouts/auth-layout/auth-layout.styles'
 import { nanoid } from '@reduxjs/toolkit'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { login } from '../users.slice'
+import { useDispatch } from 'react-redux'
 
 const SignupPage = () => {
+  const dispatch = useDispatch()
   const [inputs, setInputs] = useState({
     email: '',
     username: '',
@@ -37,6 +40,7 @@ const SignupPage = () => {
       }
       delete newUser.confirm
       createUser(newUser)
+      dispatch(login(newUser))
     }
   }
   return (
