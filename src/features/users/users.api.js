@@ -12,9 +12,14 @@ const usersApi = createApi({
     getUserById: builder.query({
       query: (id) => `/${id}`,
       providesTags: ['Users']
+    }),
+    getUserByEmail: builder.query({
+      query: (email) => `?email=${email}`,
+      providesTags: ['Users'],
+      transformResponse: response => response[0]
     })
   })
 })
 
-export const { useGetUsersQuery, useGetUserByIdQuery } = usersApi
+export const { useGetUsersQuery, useGetUserByIdQuery, useGetUserByEmailQuery } = usersApi
 export default usersApi

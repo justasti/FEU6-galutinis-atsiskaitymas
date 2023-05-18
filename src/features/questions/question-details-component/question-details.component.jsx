@@ -51,6 +51,7 @@ const QuestionDetails = ({ id }) => {
             <p className='question-content'>{detailedQuestion.content}</p>
             <div className='author-info'>
               <p>asked {parsedAskedDate}</p>
+              {/* TODO add question tag under text */}
               <div>
                 <img src={askedBy?.avatarUrl} alt={askedBy?.username} />
                 <p>

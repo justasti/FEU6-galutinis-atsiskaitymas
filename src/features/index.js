@@ -9,3 +9,4 @@ export { default as AnswersList } from './answers/answers-list/answers-list.comp
 export { default as Answer } from './answers/answer/answer.component'
 export { default as LoginPage } from './users/login-page/login.page'
 export { default as SignupPage } from './users/signup-page/signup.page'
+export { default as UserProfilePage } from './users/user-profile-page/user-profile.page'
