@@ -7,15 +7,10 @@ import {
   faPen,
 } from '@fortawesome/free-solid-svg-icons'
 import { formatDistanceToNow } from 'date-fns'
+import { Link } from 'react-router-dom'
 
 const Answer = ({ answer }) => {
   const { data: answeredBy, isSuccess } = useGetUserByIdQuery(answer.userId)
-  const askedDateDifference =
-    isSuccess &&
-    formatDistanceToNow(new Date(answer?.datePosted), {
-      addSuffix: true,
-      includeSeconds: true,
-    })
 
   const parsedAskedDate = new Date(answer?.datePosted).toLocaleString('lt-LT')
 
@@ -47,7 +42,12 @@ const Answer = ({ answer }) => {
           <div>
             <img src={answeredBy?.avatarUrl} alt={answeredBy?.username} />
             <p>
-              by <strong>{answeredBy?.username}</strong>
+              by{' '}
+              <strong>
+                <Link to={`/user/${answeredBy?.id}`}>
+                  {answeredBy?.username}
+                </Link>
+              </strong>
             </p>
           </div>
         </div>

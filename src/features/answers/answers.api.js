@@ -12,9 +12,17 @@ const answersApi = createApi({
     getAnswersByQuestionId: builder.query({
       query: (id) => `?questionId=${id}`,
       providesTags: ['Answers']
+    }),
+    postAnswer: builder.mutation({
+      query: (answer) => ({
+        url: '/',
+        method: 'POST',
+        body: answer
+      }),
+      invalidatesTags: ['Answers']
     })
   })
 })
 
-export const { useGetAnswersQuery, useGetAnswersByQuestionIdQuery } = answersApi
+export const { useGetAnswersQuery, useGetAnswersByQuestionIdQuery, usePostAnswerMutation } = answersApi
 export default answersApi

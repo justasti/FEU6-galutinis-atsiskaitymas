@@ -40,6 +40,7 @@ export const AnswerContainer = styled.div`
       line-height: 1.5;
       flex: 1;
       p {
+        white-space: pre-line;
         padding-bottom: 8px;
       }
     }
