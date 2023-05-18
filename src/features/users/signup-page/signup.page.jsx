@@ -25,15 +25,16 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!inputs.avatarUrl)
-      setInputs({
-        ...inputs,
-        avatarUrl: `https://ui-avatars.com/api/?name=${inputs.username}&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true`,
-      })
     const existingUser = allUsers.find((user) => user.email === inputs.email)
     if (existingUser) alert('existing!')
     else {
-      const newUser = { ...inputs, id: nanoid() }
+      const newUser = {
+        ...inputs,
+        avatarUrl: inputs.avatarUrl
+          ? inputs.avatarUrl
+          : `https://ui-avatars.com/api/?name=${inputs.username}&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true`,
+        id: nanoid(),
+      }
       delete newUser.confirm
       createUser(newUser)
     }
