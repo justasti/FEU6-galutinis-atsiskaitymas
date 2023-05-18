@@ -6,7 +6,12 @@ export const StyledHeader = styled.header`
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #fff;
+  padding-inline: 50px;
+  img {
+    height: 70px;
+    padding-bottom: 10px;
+  }
 `
