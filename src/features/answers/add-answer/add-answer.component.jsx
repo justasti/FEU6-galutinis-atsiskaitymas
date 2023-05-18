@@ -27,7 +27,7 @@ const AddAnswer = ({ questionId }) => {
   }
   if (!authUser)
     return (
-      <h3>
+      <h3 className='login-to'>
         <Link to='/login'>Login</Link> to post answers!
       </h3>
     )

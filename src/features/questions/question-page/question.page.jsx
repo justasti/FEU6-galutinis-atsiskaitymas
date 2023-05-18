@@ -5,10 +5,10 @@ const QuestionPage = () => {
   const { id } = useParams()
 
   return (
-    <div>
+    <>
       <QuestionDetails id={id} />
       <AnswersList id={id} />
-    </div>
+    </>
   )
 }
 export default QuestionPage

@@ -21,3 +21,9 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+.login-to {
+  text-align: center;
+}
+.login-to a {
+  color: darkgoldenrod;
+}

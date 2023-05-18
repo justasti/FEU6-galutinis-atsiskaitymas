@@ -7,9 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { login } from '../users.slice'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const SignupPage = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [inputs, setInputs] = useState({
     email: '',
     username: '',
@@ -41,6 +43,7 @@ const SignupPage = () => {
       delete newUser.confirm
       createUser(newUser)
       dispatch(login(newUser))
+      navigate('/')
     }
   }
   return (
