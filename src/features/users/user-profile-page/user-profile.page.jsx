@@ -14,8 +14,11 @@ const UserProfilePage = () => {
     <StyledUserProfile>
       <UserDescription user={user} />
       <h2>
-        {userQuestions.length} question{userQuestions.length > 1 && 's'} by{' '}
-        {user.username}
+        {!userQuestions.length
+          ? `${user.username} haven't asked any questions yet`
+          : `${userQuestions.length} question${
+              userQuestions.length > 1 ? 's' : ''
+            } by ${user.username}`}
       </h2>
       <QuestionsContainer>
         {userQuestions.map((q) => (
