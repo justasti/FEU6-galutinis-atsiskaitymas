@@ -13,3 +13,4 @@ export { default as UserProfilePage } from './users/user-profile-page/user-profi
 export { default as UserDescription } from './users/user-description/user-description.component'
 export { default as QuestionTag } from './UI/question-tag/question-tag.component'
 export { default as AddAnswer } from './answers/add-answer/add-answer.component'
+export { default as Button } from './UI/button/button.component'
