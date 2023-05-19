@@ -20,7 +20,14 @@ const answersApi = createApi({
         body: answer
       }),
       invalidatesTags: ['Answers']
-    })
+    }),
+    deleteAnswer: builder.mutation({
+      query: (id) => ({
+        url: `/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ['Answers']
+    }),
   })
 })
 
