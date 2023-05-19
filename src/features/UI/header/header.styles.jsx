@@ -14,4 +14,8 @@ export const StyledHeader = styled.header`
     height: 70px;
     padding-bottom: 10px;
   }
+  .buttons-container {
+    display: flex;
+    gap: 15px;
+  }
 `
