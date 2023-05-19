@@ -1,29 +1,59 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { usePostAnswerMutation } from '../answers.api'
+import { usePostAnswerMutation, useUpdateAnswerMutation } from '../answers.api'
 import { nanoid } from '@reduxjs/toolkit'
 import { NewAnswerForm } from './add-answer.styles'
 
-const AddAnswer = ({ questionId }) => {
+const AddAnswer = ({ answerToEdit, onAnswerEdited, questionId }) => {
   const [answer, setAnswer] = useState('')
+  const [editedAnswer, setEditedAnswer] = useState('')
   const [postAnswer] = usePostAnswerMutation()
+  const [updateAnswer] = useUpdateAnswerMutation()
   const { authUser } = useSelector((state) => state.users)
+
+  if (answerToEdit) {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    setEditedAnswer(answerToEdit?.content)
+  }, [answerToEdit])
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (answer.trim()) {
-      const newAnswer = {
-        id: nanoid(),
-        userId: authUser.id,
-        questionId: questionId,
-        content: answer,
-        datePosted: new Date().toISOString(),
-        isEdited: false,
-        ratings: [],
+
+    if (answerToEdit) {
+      const updatedAnswer = {
+        ...answerToEdit,
+        content: editedAnswer,
+        isEdited: true,
+        dateEdited: new Date().toISOString(),
       }
-      postAnswer(newAnswer)
-      setAnswer('')
+      const answerParagraph = document.querySelector(
+        `[data-answer-id="${answerToEdit.id}"]`
+      )
+      console.dir(answerParagraph)
+      answerParagraph.scrollIntoView({ behavior: 'smooth' })
+
+      updateAnswer(updatedAnswer)
+      onAnswerEdited()
+    } else {
+      if (answer.trim()) {
+        const newAnswer = {
+          id: nanoid(),
+          userId: authUser.id,
+          questionId: questionId,
+          content: answer,
+          datePosted: new Date().toISOString(),
+          isEdited: false,
+          ratings: [],
+        }
+        postAnswer(newAnswer)
+      }
     }
+    setAnswer('')
+    setEditedAnswer('')
   }
   if (!authUser)
     return (
@@ -33,11 +63,19 @@ const AddAnswer = ({ questionId }) => {
     )
   return (
     <NewAnswerForm onSubmit={handleSubmit}>
-      <textarea
-        id='answer'
-        value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
-      ></textarea>
+      {answerToEdit ? (
+        <textarea
+          id='answer'
+          value={editedAnswer}
+          onChange={(e) => setEditedAnswer(e.target.value)}
+        ></textarea>
+      ) : (
+        <textarea
+          id='answer'
+          value={answer}
+          onChange={(e) => setAnswer(e.target.value)}
+        ></textarea>
+      )}
       <input type='submit' value='Submit' />
     </NewAnswerForm>
   )

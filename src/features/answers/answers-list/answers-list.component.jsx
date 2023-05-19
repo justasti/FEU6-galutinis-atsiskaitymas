@@ -1,13 +1,21 @@
+import { useState } from 'react'
 import { Answer, AddAnswer } from '../../'
 import { useGetAnswersByQuestionIdQuery } from '../answers.api'
 
 const AnswersList = ({ id }) => {
-  const {
-    data: answers,
-    isLoading,
-    isSuccess,
-  } = useGetAnswersByQuestionIdQuery(id)
+  const { data: answers, isLoading } = useGetAnswersByQuestionIdQuery(id)
+  const [answerToEdit, setAnswerToEdit] = useState(null)
+
+  const editAnswer = (answer) => {
+    setAnswerToEdit(answer)
+  }
+
+  const handleEditAnswer = () => {
+    setAnswerToEdit(null)
+  }
+
   if (isLoading) return <p>Loading...</p>
+
   if (!answers.length)
     return (
       <>
@@ -15,18 +23,21 @@ const AnswersList = ({ id }) => {
         <AddAnswer questionId={id} />
       </>
     )
+
   return (
-    isSuccess && (
-      <>
-        <h2>
-          {answers.length} answer{answers.length > 1 && 's'}
-        </h2>
-        {answers.map((answer) => (
-          <Answer key={answer.id} answer={answer} />
-        ))}
-        <AddAnswer questionId={id} />
-      </>
-    )
+    <>
+      <h2>
+        {answers.length} answer{answers.length > 1 && 's'}
+      </h2>
+      {answers.map((answer) => (
+        <Answer onEditAnswer={editAnswer} key={answer.id} answer={answer} />
+      ))}
+      <AddAnswer
+        onAnswerEdited={handleEditAnswer}
+        answerToEdit={answerToEdit}
+        questionId={id}
+      />
+    </>
   )
 }
 export default AnswersList
