@@ -14,3 +14,5 @@ export { default as UserDescription } from './users/user-description/user-descri
 export { default as QuestionTag } from './UI/question-tag/question-tag.component'
 export { default as AddAnswer } from './answers/add-answer/add-answer.component'
 export { default as Button } from './UI/button/button.component'
+export { default as Input } from './UI/input/input.component'
+export { default as InputGroup } from './UI/input-group/input-group.component'
