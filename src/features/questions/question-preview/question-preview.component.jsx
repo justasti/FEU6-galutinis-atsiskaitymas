@@ -7,9 +7,7 @@ import { StyledQuestionPreview } from './question-preview.styles'
 import { Link } from 'react-router-dom'
 import { QuestionTag } from '../../'
 
-const QuestionPreview = ({ question }) => {
-  const { data: answers, isLoading: answerIsLoading } =
-    useGetAnswersByQuestionIdQuery(question.id)
+const QuestionPreview = ({ question, answers }) => {
   const { data: askedBy } = useGetUserByIdQuery(question.userId)
   const dateDifference = formatDistanceToNow(new Date(question.datePosted), {
     addSuffix: true,
@@ -34,7 +32,7 @@ const QuestionPreview = ({ question }) => {
       <div className='question-stats'>
         <span>
           <FontAwesomeIcon icon={faComment} />
-          {answerIsLoading ? 0 : answers.length}
+          {answers?.length}
         </span>
         <span>
           <FontAwesomeIcon icon={faStar} />

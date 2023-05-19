@@ -27,3 +27,16 @@ a:hover {
 .login-to a {
   color: darkgoldenrod;
 }
+.sort-type {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.sort-type span {
+  font-weight: 500;
+  cursor: pointer;
+}
+.sort-type span:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

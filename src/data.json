@@ -60,7 +60,7 @@
       "datePosted": "2023-04-19T05:19:31Z",
       "isEdited": true,
       "dateEdited": "2023-04-21T15:02:16Z",
-      "ratings": [],
+      "ratings": [{ "rating": 1 }],
       "tag": "python"
     },
     {
