@@ -62,4 +62,31 @@ export const AnswerContainer = styled.div`
       }
     }
   }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    p {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    svg {
+      font-size: 1.25rem;
+      width: 20px;
+      margin-right: 5px;
+    }
+    .remove svg {
+      color: red;
+    }
+    .edit svg {
+      color: #f48023;
+    }
+  }
 `

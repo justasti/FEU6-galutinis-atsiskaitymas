@@ -31,5 +31,5 @@ const answersApi = createApi({
   })
 })
 
-export const { useGetAnswersQuery, useGetAnswersByQuestionIdQuery, usePostAnswerMutation } = answersApi
+export const { useGetAnswersQuery, useGetAnswersByQuestionIdQuery, usePostAnswerMutation, useDeleteAnswerMutation } = answersApi
 export default answersApi
