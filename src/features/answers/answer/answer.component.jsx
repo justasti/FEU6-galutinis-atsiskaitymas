@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux'
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import { useDeleteAnswerMutation } from '../answers.api'
 
-const Answer = ({ answer }) => {
+const Answer = ({ answer, onEditAnswer }) => {
   const { data: answeredBy } = useGetUserByIdQuery(answer.userId)
   const { authUser } = useSelector((state) => state.users)
   const [deleteAnswer] = useDeleteAnswerMutation()
@@ -29,7 +29,7 @@ const Answer = ({ answer }) => {
         <FontAwesomeIcon icon={faCaretDown} />
       </div>
       <div className='answer-content'>
-        <p>{answer.content}</p>
+        <p data-answer-id={answer.id}>{answer.content}</p>
         {answer.isEdited && (
           <div className='date-info'>
             {parsedEditedDate && (
@@ -62,7 +62,7 @@ const Answer = ({ answer }) => {
                 <FontAwesomeIcon icon={faTrashAlt} />
                 Remove Answer
               </p>
-              <p className='edit'>
+              <p className='edit' onClick={() => onEditAnswer(answer)}>
                 <FontAwesomeIcon icon={faPencilAlt} />
                 Edit Answer
               </p>

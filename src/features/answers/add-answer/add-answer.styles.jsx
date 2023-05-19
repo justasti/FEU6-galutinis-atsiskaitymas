@@ -7,6 +7,8 @@ export const NewAnswerForm = styled.form`
   align-items: end;
   gap: 15px;
   textarea {
+    padding: 10px;
+    font-size: 1rem;
     width: 100%;
     height: 250px;
   }

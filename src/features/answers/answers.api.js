@@ -28,8 +28,16 @@ const answersApi = createApi({
       }),
       invalidatesTags: ['Answers']
     }),
+    updateAnswer: builder.mutation({
+      query: (answer) => ({
+        url: `/${answer.id}`,
+        method: 'PATCH',
+        body: answer
+      }),
+      invalidatesTags: ['Answers']
+    }),
   })
 })
 
-export const { useGetAnswersQuery, useGetAnswersByQuestionIdQuery, usePostAnswerMutation, useDeleteAnswerMutation } = answersApi
+export const { useGetAnswersQuery, useGetAnswersByQuestionIdQuery, usePostAnswerMutation, useDeleteAnswerMutation, useUpdateAnswerMutation } = answersApi
 export default answersApi
