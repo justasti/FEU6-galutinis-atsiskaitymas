@@ -1,5 +1,5 @@
 import { useCreateNewUserMutation, useGetUsersQuery } from '../users.api'
-import { Header } from '../../'
+import { Button, Header } from '../../'
 import { AuthMain } from '../../../layouts/auth-layout/auth-layout.styles'
 import { nanoid } from '@reduxjs/toolkit'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
+import { StyledForm } from './signup-page.styles'
 
 const SignupPage = () => {
   const dispatch = useDispatch()
@@ -78,15 +79,15 @@ const SignupPage = () => {
     <>
       <Header />
       <AuthMain>
-        <form onSubmit={formik.handleSubmit}>
-          <div>
+        <StyledForm onSubmit={formik.handleSubmit}>
+          <div className='input-group'>
             <label htmlFor='email'>Email Address*</label>
             <input type='text' id='email' {...formik.getFieldProps('email')} />
             {formik.touched.email && formik.errors.email && (
               <p>{formik.errors.email}</p>
             )}
           </div>
-          <div>
+          <div className='input-group'>
             <label htmlFor='username'>Username*</label>
             <input
               type='text'
@@ -97,7 +98,7 @@ const SignupPage = () => {
               <p>{formik.errors.username}</p>
             )}
           </div>
-          <div>
+          <div className='input-group'>
             <label htmlFor='avatarUrl'>Avatar URL</label>
             <input
               type='url'
@@ -108,7 +109,7 @@ const SignupPage = () => {
               <p>{formik.errors.avatarUrl}</p>
             )}
           </div>
-          <div>
+          <div className='input-group'>
             <label htmlFor='password'>Password*</label>
             <input
               type='password'
@@ -119,7 +120,7 @@ const SignupPage = () => {
               <p>{formik.errors.password}</p>
             )}
           </div>
-          <div>
+          <div className='input-group'>
             <label htmlFor='confirm'>Confirm Password*</label>
             <input
               type='password'
@@ -130,10 +131,10 @@ const SignupPage = () => {
               <p>{formik.errors.confirm}</p>
             )}
           </div>
-          <button type='submit'>
+          <Button variant='inverted' type='submit'>
             Signup {isLoading && <FontAwesomeIcon icon={faSpinner} />}
-          </button>
-        </form>
+          </Button>
+        </StyledForm>
       </AuthMain>
     </>
   )
