@@ -1,4 +1,8 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import {
+  RouterProvider,
+  createBrowserRouter,
+  useLocation,
+} from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/main-layout/main.layout'
 import {
@@ -8,6 +12,7 @@ import {
   SignupPage,
   UserProfilePage,
 } from './features'
+import { useEffect } from 'react'
 
 function App() {
   const router = createBrowserRouter([

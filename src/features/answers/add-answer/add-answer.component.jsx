@@ -31,8 +31,9 @@ const AddAnswer = ({ answerToEdit, onAnswerEdited, questionId }) => {
         dateEdited: new Date().toISOString(),
       }
       const answerParagraph = document.querySelector(
-        `[data-answer-id=${answerToEdit.id}]`
+        `[data-answer-id="${answerToEdit.id}"]`
       )
+      console.dir(answerParagraph)
       answerParagraph.scrollIntoView({ behavior: 'smooth' })
 
       updateAnswer(updatedAnswer)
