@@ -1,5 +1,5 @@
 import { useCreateNewUserMutation, useGetUsersQuery } from '../users.api'
-import { Button, Header } from '../../'
+import { Button, ErrorMessage, Header, Input, InputGroup } from '../../'
 import { AuthMain } from '../../../layouts/auth-layout/auth-layout.styles'
 import { nanoid } from '@reduxjs/toolkit'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,10 +10,12 @@ import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { StyledForm } from './signup-page.styles'
+import { useState } from 'react'
 
 const SignupPage = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const [existingUser, setExistingUser] = useState(false)
   const [createUser, { isLoading }] = useCreateNewUserMutation()
   const { data: allUsers } = useGetUsersQuery()
 
@@ -27,6 +29,7 @@ const SignupPage = () => {
       ),
     username: yup
       .string()
+      .trim()
       .required('Required field')
       .max(15, 'Must be 15 characters or less'),
     avatarUrl: yup
@@ -37,6 +40,7 @@ const SignupPage = () => {
       ),
     password: yup
       .string()
+      .trim()
       .required('Required field')
       .min(6, 'Must be at least 6 characters long'),
     confirm: yup
@@ -58,7 +62,7 @@ const SignupPage = () => {
     validationSchema,
     onSubmit: (values) => {
       const existingUser = allUsers.find((user) => user.email === values.email)
-      if (existingUser) alert('existing!')
+      if (existingUser) setExistingUser(true)
       else {
         const newUser = {
           ...values,
@@ -80,60 +84,100 @@ const SignupPage = () => {
       <Header />
       <AuthMain>
         <StyledForm onSubmit={formik.handleSubmit}>
-          <div className='input-group'>
-            <label htmlFor='email'>Email Address*</label>
-            <input type='text' id='email' {...formik.getFieldProps('email')} />
+          <InputGroup>
+            <label
+              className={formik.values.email ? 'filled' : null}
+              htmlFor='email'
+            >
+              Email Address*
+            </label>
+            <Input
+              type='email'
+              id='email'
+              name='email'
+              onChange={(val) => {
+                setExistingUser(false)
+                formik.handleChange(val)
+              }}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+            />
             {formik.touched.email && formik.errors.email && (
-              <p>{formik.errors.email}</p>
+              <ErrorMessage>{formik.errors.email}</ErrorMessage>
             )}
-          </div>
-          <div className='input-group'>
-            <label htmlFor='username'>Username*</label>
-            <input
+          </InputGroup>
+          <InputGroup>
+            <label
+              className={formik.values.username ? 'filled' : null}
+              htmlFor='username'
+            >
+              Username*
+            </label>
+            <Input
               type='text'
               id='username'
               {...formik.getFieldProps('username')}
-            />{' '}
+            />
             {formik.touched.username && formik.errors.username && (
-              <p>{formik.errors.username}</p>
+              <ErrorMessage>{formik.errors.username}</ErrorMessage>
             )}
-          </div>
-          <div className='input-group'>
-            <label htmlFor='avatarUrl'>Avatar URL</label>
-            <input
+          </InputGroup>
+          <InputGroup>
+            <label
+              className={formik.values.avatarUrl ? 'filled' : null}
+              htmlFor='avatarUrl'
+            >
+              Avatar URL
+            </label>
+            <Input
               type='url'
               id='avatarUrl'
               {...formik.getFieldProps('avatarUrl')}
             />
             {formik.touched.avatarUrl && formik.errors.avatarUrl && (
-              <p>{formik.errors.avatarUrl}</p>
+              <ErrorMessage>{formik.errors.avatarUrl}</ErrorMessage>
             )}
-          </div>
-          <div className='input-group'>
-            <label htmlFor='password'>Password*</label>
-            <input
+          </InputGroup>
+          <InputGroup>
+            <label
+              className={formik.values.password ? 'filled' : null}
+              htmlFor='password'
+            >
+              Password*
+            </label>
+            <Input
               type='password'
               id='password'
               {...formik.getFieldProps('password')}
             />
             {formik.touched.password && formik.errors.password && (
-              <p>{formik.errors.password}</p>
+              <ErrorMessage>{formik.errors.password}</ErrorMessage>
             )}
-          </div>
-          <div className='input-group'>
-            <label htmlFor='confirm'>Confirm Password*</label>
-            <input
+          </InputGroup>
+          <InputGroup>
+            <label
+              className={formik.values.confirm ? 'filled' : null}
+              htmlFor='confirm'
+            >
+              Confirm Password*
+            </label>
+            <Input
               type='password'
               id='confirm'
               {...formik.getFieldProps('confirm')}
             />
             {formik.touched.confirm && formik.errors.confirm && (
-              <p>{formik.errors.confirm}</p>
+              <ErrorMessage>{formik.errors.confirm}</ErrorMessage>
             )}
-          </div>
+          </InputGroup>
           <Button variant='inverted' type='submit'>
             Signup {isLoading && <FontAwesomeIcon icon={faSpinner} />}
           </Button>
+          {existingUser && (
+            <ErrorMessage pos='normal'>
+              Account with email {formik.values.email} already exists
+            </ErrorMessage>
+          )}
         </StyledForm>
       </AuthMain>
     </>

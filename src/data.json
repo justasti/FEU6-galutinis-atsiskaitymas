@@ -60,7 +60,11 @@
       "datePosted": "2023-04-19T05:19:31Z",
       "isEdited": true,
       "dateEdited": "2023-04-21T15:02:16Z",
-      "ratings": [{ "rating": 1 }],
+      "ratings": [
+        {
+          "rating": 1
+        }
+      ],
       "tag": "python"
     },
     {
@@ -472,6 +476,13 @@
       "avatarUrl": "https://ui-avatars.com/api/?name=Justas&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "password": "asdasd",
       "id": "1J__qRljs8mXF3k5UiA-W"
+    },
+    {
+      "email": "joksaitejudita@gmail.com",
+      "username": "Judita",
+      "avatarUrl": "https://ui-avatars.com/api/?name=Judita&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
+      "password": "asdasd",
+      "id": "ncxeJ_Pl2ubsKyFouZ7aK"
     }
   ]
 }
