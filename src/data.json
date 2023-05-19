@@ -205,10 +205,11 @@
       "id": "kq4VOk5ZJzIdLRx5yeRjP",
       "userId": "uKVgbjiMjB_SFc6O4Vo63",
       "questionId": "kJO8umtEoR8tzXzufCQ_Yf",
-      "content": "To sort an array in JavaScript, you can use the Array.prototype.sort() method. Here's how you can do it: // Example array: const array = [5, 2, 8, 1, 4]; // Sorting the array in ascending order: const ascendingArray = array.sort((a, b) => a - b); console.log(ascendingArray); // Output: [1, 2, 4, 5, 8] // Sorting the array in descending order: const descendingArray = array.sort((a, b) => b - a); console.log(descendingArray); // Output: [8, 5, 4, 2, 1]. In the sort() method, you can provide a comparison function as an argument. The comparison function determines the sorting order. It takes two parameters, typically referred to as a and b, representing two elements of the array being compared. If the comparison function returns a negative value, a will be placed before b. If the comparison function returns a positive value, b will be placed before a. If the comparison function returns 0, the order of a and b remains unchanged. In the example above, the comparison function (a, b) => a - b is used to sort the array in ascending order. For descending order, the comparison function is (a, b) => b - a. Note that the sort() method sorts the original array in place and also returns a reference to the sorted array. If you don't want to modify the original array, you can make a copy of it before sorting.",
+      "content": "<p>To sort an array in JavaScript, you can use the <strong>Array.prototype.sort() </strong>method.</p><p>Here's how you can do it:</p><pre class=\"ql-syntax\" spellcheck=\"false\">// Example array: \nconst array = [5, 2, 8, 1, 4]; \n// Sorting the array in ascending order: \nconst ascendingArray = array.sort((a, b) =&gt; a - b);\nconsole.log(ascendingArray); // Output: [1, 2, 4, 5, 8] \n// Sorting the array in descending order: \nconst descendingArray = array.sort((a, b) =&gt; b - a);\nconsole.log(descendingArray); // Output: [8, 5, 4, 2, 1]. \n</pre><p>In the sort() method, you can provide a comparison function as an argument. The comparison function determines the sorting order. It takes two parameters, typically referred to as a and b, representing two elements of the array being compared. If the comparison function returns a negative value, a will be placed before b. If the comparison function returns a positive value, b will be placed before a. If the comparison function returns 0, the order of a and b remains unchanged.</p><p>In the example above, the comparison function (a, b) =&gt; a - b is used to sort the array in ascending order. For descending order, the comparison function is (a, b) =&gt; b - a.</p><blockquote>Note that the sort() method sorts the original array in place and also returns a reference to the sorted array. If you don't want to modify the original array, you can make a copy of it before sorting.</blockquote>",
       "ratings": [],
-      "isEdited": false,
-      "datePosted": "2023-05-14T22:10:20Z"
+      "isEdited": true,
+      "datePosted": "2023-05-14T22:10:20Z",
+      "dateEdited": "2023-05-19T16:39:03.988Z"
     },
     {
       "id": "YU6Eh30KH9SVBvSVj6WGP",
@@ -224,11 +225,11 @@
       "id": "x2HLuOGQZYuDQw5GEQ-Q9",
       "userId": "1J__qRljs8mXF3k5UiA-W",
       "questionId": "PN9zyL_ZdN0aFmydCgbyJ",
-      "content": "EDITED: To deploy a React app to a production server, you can follow these general steps:\n\nBuild the React app: Use a build tool like npm or yarn to create a production-ready build of your React app. In most cases, you would run the command npm run build or yarn build in your project's root directory. This will generate an optimized and minified version of your app ready for deployment.\n\nChoose a hosting provider: Select a hosting provider that supports serving static files. Some popular options include Netlify, Vercel, AWS S3, GitHub Pages, Firebase Hosting, or a traditional web hosting provider. Make sure the provider supports hosting static files and has the necessary infrastructure for deploying your React app.\n\nUpload the build files: Once you have chosen a hosting provider, follow their documentation or interface to upload the build files to the server. Typically, you would upload the contents of the generated build folder (from the previous step) to the hosting provider.\n\nConfigure server routing (if necessary): If your React app uses client-side routing (e.g., React Router) with routes other than the root URL (\"/\"), you need to configure the server to handle those routes correctly. For example, if using Netlify or Vercel, you can set up \"redirects\" or \"rewrites\" in their respective configuration files. Consult the documentation of your hosting provider for guidance on configuring routing.\n\nSet up a custom domain (optional): If you have a custom domain, you can configure it to point to your deployed React app. This usually involves updating DNS settings to map the domain to the server where your app is hosted. Refer to your domain registrar's documentation or the documentation of your hosting provider for instructions on setting up a custom domain.\n\nTest the deployment: Once the deployment is complete, access your React app using the provided URL or custom domain. Verify that everything works as expected, including navigation, data fetching, and any server-side integrations.\n\nRemember to review the specific documentation and guidelines provided by your chosen hosting provider as the deployment process may vary slightly depending on the platform you're using.",
+      "content": "<p>To deploy a React app to a production server, you can follow these general steps:</p><ol><li><strong>Build the React app</strong>: Use a build tool like npm or yarn to create a production-ready build of your React app. In most cases, you would run the command npm run build or yarn build in your project's root directory. This will generate an optimized and minified version of your app ready for deployment.</li><li><strong>Choose a hosting provider</strong>: Select a hosting provider that supports serving static files. Some popular options include Netlify, Vercel, AWS S3, GitHub Pages, Firebase Hosting, or a traditional web hosting provider. Make sure the provider supports hosting static files and has the necessary infrastructure for deploying your React app.</li><li><strong>Upload the build files</strong>: Once you have chosen a hosting provider, follow their documentation or interface to upload the build files to the server. Typically, you would upload the contents of the generated build folder (from the previous step) to the hosting provider.</li><li><strong>Configure server routing (if necessary):</strong> If your React app uses client-side routing (e.g., React Router) with routes other than the root URL (\"/\"), you need to configure the server to handle those routes correctly. For example, if using Netlify or Vercel, you can set up \"redirects\" or \"rewrites\" in their respective configuration files. Consult the documentation of your hosting provider for guidance on configuring routing.</li><li><strong>Set up a custom domain (optional)</strong>: If you have a custom domain, you can configure it to point to your deployed React app. This usually involves updating DNS settings to map the domain to the server where your app is hosted. Refer to your domain registrar's documentation or the documentation of your hosting provider for instructions on setting up a custom domain.</li><li><strong>Test the deployment</strong>: Once the deployment is complete, access your React app using the provided URL or custom domain. Verify that everything works as expected, including navigation, data fetching, and any server-side integrations.</li></ol><p>Remember to review the specific documentation and guidelines provided by your chosen hosting provider as the deployment process may vary slightly depending on the platform you're using.</p>",
       "datePosted": "2023-05-18T12:36:06.488Z",
       "isEdited": true,
       "ratings": [],
-      "dateEdited": "2023-05-19T11:56:13.893Z"
+      "dateEdited": "2023-05-19T16:25:10.022Z"
     },
     {
       "id": "UbD-xdsNZoXh89mfnjYgu",
@@ -328,6 +329,16 @@
       "datePosted": "2023-05-19T08:39:05.020Z",
       "isEdited": false,
       "ratings": []
+    },
+    {
+      "id": "1cQixp9JY-UnegsJQpjFL",
+      "userId": "1J__qRljs8mXF3k5UiA-W",
+      "questionId": "PN9zyL_ZdN0aFmydCgbyJ",
+      "content": "<blockquote>adasadasd</blockquote><pre class=\"ql-syntax\" spellcheck=\"false\">asdadasdasdads\n</pre>",
+      "datePosted": "2023-05-19T16:27:23.842Z",
+      "isEdited": true,
+      "ratings": [],
+      "dateEdited": "2023-05-19T16:28:58.404Z"
     }
   ],
   "users": [

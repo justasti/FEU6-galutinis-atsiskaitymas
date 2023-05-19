@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import { usePostAnswerMutation, useUpdateAnswerMutation } from '../answers.api'
 import { nanoid } from '@reduxjs/toolkit'
 import { NewAnswerForm } from './add-answer.styles'
+import ReactQuill from 'react-quill'
+import { Button } from '../../'
+import 'react-quill/dist/quill.snow.css'
 
 const AddAnswer = ({ answerToEdit, onAnswerEdited, questionId }) => {
   const [answer, setAnswer] = useState('')
@@ -22,7 +25,6 @@ const AddAnswer = ({ answerToEdit, onAnswerEdited, questionId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     if (answerToEdit) {
       const updatedAnswer = {
         ...answerToEdit,
@@ -33,7 +35,6 @@ const AddAnswer = ({ answerToEdit, onAnswerEdited, questionId }) => {
       const answerParagraph = document.querySelector(
         `[data-answer-id="${answerToEdit.id}"]`
       )
-      console.dir(answerParagraph)
       answerParagraph.scrollIntoView({ behavior: 'smooth' })
 
       updateAnswer(updatedAnswer)
@@ -55,6 +56,22 @@ const AddAnswer = ({ answerToEdit, onAnswerEdited, questionId }) => {
     setAnswer('')
     setEditedAnswer('')
   }
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ color: [] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
+      [
+        { list: 'ordered' },
+        { list: 'bullet' },
+        { indent: '-1' },
+        { indent: '+1' },
+      ],
+      ['link'],
+      ['clean'],
+    ],
+  }
+
   if (!authUser)
     return (
       <h3 className='login-to'>
@@ -64,19 +81,21 @@ const AddAnswer = ({ answerToEdit, onAnswerEdited, questionId }) => {
   return (
     <NewAnswerForm onSubmit={handleSubmit}>
       {answerToEdit ? (
-        <textarea
-          id='answer'
+        <ReactQuill
+          theme='snow'
+          modules={modules}
           value={editedAnswer}
-          onChange={(e) => setEditedAnswer(e.target.value)}
-        ></textarea>
+          onChange={setEditedAnswer}
+        />
       ) : (
-        <textarea
-          id='answer'
+        <ReactQuill
+          theme='snow'
+          modules={modules}
           value={answer}
-          onChange={(e) => setAnswer(e.target.value)}
-        ></textarea>
+          onChange={setAnswer}
+        />
       )}
-      <input type='submit' value='Submit' />
+      <Button>POST ANSWER</Button>
     </NewAnswerForm>
   )
 }

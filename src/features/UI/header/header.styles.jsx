@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   background-color: #fff;
   padding-inline: 50px;
+  z-index: 3;
   img {
     height: 70px;
     padding-bottom: 10px;

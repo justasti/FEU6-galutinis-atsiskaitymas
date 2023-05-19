@@ -40,6 +40,33 @@ export const AnswerContainer = styled.div`
     p {
       white-space: pre-line;
       padding-bottom: 8px;
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      blockquote {
+        padding: 4px;
+        padding-left: 10px;
+        background-color: #f5f5f5;
+        border-left: 3px solid #aaa;
+      }
+      pre {
+        background-color: #111;
+        color: #eee;
+        padding: 10px;
+        padding-top: 40px;
+        margin: 5px 15px;
+        position: relative;
+        &::before {
+          position: absolute;
+          top: 5px;
+          left: 15px;
+          content: 'CODE';
+          color: #df6400;
+          font-size: 0.9rem;
+          font-weight: bold;
+        }
+      }
     }
   }
   .author-info {
