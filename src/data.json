@@ -298,10 +298,11 @@
       "id": "fBbJHLoR1edezO1V6XvC6",
       "userId": "uKVgbjiMjB_SFc6O4Vo63",
       "questionId": "3v3D6cVwV5DybyoyQvbohh",
-      "content": "When handling null values in SQL queries, you need to consider the specific requirements of your query and how you want to handle nulls. Here are some common approaches:\n\n1. IS NULL / IS NOT NULL: Use the IS NULL or IS NOT NULL operators to filter or compare against null values. For example, to select rows where a specific column is null:\nSELECT * FROM table_name WHERE column_name IS NULL;\n2. COALESCE: The COALESCE function allows you to substitute a null value with a specified default value. It returns the first non-null value from a list of expressions. For example, to retrieve a column's value or a default value if it's null:\nSELECT COALESCE(column_name, 'default_value') FROM table_name;\n3. IFNULL / NVL: These functions are similar to COALESCE and provide a way to handle null values. They return the first non-null value from a list of expressions. The IFNULL function is typically used in MySQL, while NVL is commonly used in Oracle databases. For example:\n-- MySQL\nSELECT IFNULL(column_name, 'default_value') FROM table_name;\n-- Oracle\nSELECT NVL(column_name, 'default_value') FROM table_name;\n4. CASE statement: The CASE statement allows you to perform conditional logic based on null values. You can specify different actions or values based on whether a column is null or not. For example:\nSELECT \n  CASE\n    WHEN column_name IS NULL THEN 'Value if null'\n    ELSE 'Value if not null'\n  END\nFROM table_name;\n\nThese are some of the common techniques for handling null values in SQL queries. The approach you choose depends on the specific requirements and the logic you want to implement in your query.",
+      "content": "<p>When handling null values in SQL queries, you need to consider the specific requirements of your query and how you want to handle nulls.</p><p>Here are some common approaches:</p><blockquote class=\"ql-indent-1\">IS NULL / IS NOT NULL:</blockquote><p>Use the IS NULL or IS NOT NULL operators to filter or compare against null values. For example, to select rows where a specific column is null:</p><pre class=\"ql-syntax\" spellcheck=\"false\">SELECT * FROM table_name WHERE column_name IS NULL; \n</pre><blockquote class=\"ql-indent-1\">COALESCE:</blockquote><p>The COALESCE function allows you to substitute a null value with a specified default value. It returns the first non-null value from a list of expressions. For example, to retrieve a column's value or a default value if it's null: \\</p><pre class=\"ql-syntax\" spellcheck=\"false\">SELECT COALESCE(column_name, 'default_value') FROM table_name;\n</pre><blockquote class=\"ql-indent-1\">IFNULL / NVL:</blockquote><p>These functions are similar to COALESCE and provide a way to handle null values. They return the first non-null value from a list of expressions. The IFNULL function is typically used in MySQL, while NVL is commonly used in Oracle databases. For example:</p><pre class=\"ql-syntax\" spellcheck=\"false\">-- MySQL\n SELECT IFNULL(column_name, 'default_value') FROM table_name; \n-- Oracle \nSELECT NVL(column_name, 'default_value') FROM table_name;\n</pre><blockquote class=\"ql-indent-1\">CASE statement:</blockquote><p>The CASE statement allows you to perform conditional logic based on null values. You can specify different actions or values based on whether a column is null or not. For example:</p><pre class=\"ql-syntax\" spellcheck=\"false\">SELECT\nCASE\nWHEN column_name IS NULL THEN 'Value if null' \nELSE 'Value if not null' END\nFROM table_name; \n</pre><p>These are some of the common techniques for handling null values in SQL queries. The approach you choose depends on the specific requirements and the logic you want to implement in your query.</p>",
       "datePosted": "2023-05-18T13:10:47.776Z",
-      "isEdited": false,
-      "ratings": []
+      "isEdited": true,
+      "ratings": [],
+      "dateEdited": "2023-05-19T16:53:26.199Z"
     },
     {
       "id": "bHTxmHRezdnIhuB0dCKJj",
@@ -329,16 +330,6 @@
       "datePosted": "2023-05-19T08:39:05.020Z",
       "isEdited": false,
       "ratings": []
-    },
-    {
-      "id": "1cQixp9JY-UnegsJQpjFL",
-      "userId": "1J__qRljs8mXF3k5UiA-W",
-      "questionId": "PN9zyL_ZdN0aFmydCgbyJ",
-      "content": "<blockquote>adasadasd</blockquote><pre class=\"ql-syntax\" spellcheck=\"false\">asdadasdasdads\n</pre>",
-      "datePosted": "2023-05-19T16:27:23.842Z",
-      "isEdited": true,
-      "ratings": [],
-      "dateEdited": "2023-05-19T16:28:58.404Z"
     }
   ],
   "users": [
