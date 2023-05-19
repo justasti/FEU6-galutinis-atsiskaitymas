@@ -29,11 +29,4 @@ export const StyledInputGroup = styled.div`
   &:has(p) label {
     color: red;
   }
-  p {
-    font-size: 0.8rem;
-    color: red;
-    position: absolute;
-    bottom: -20px;
-    text-transform: uppercase;
-  }
 `
