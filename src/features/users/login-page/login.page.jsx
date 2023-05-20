@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Header, Input, InputGroup, Button, ErrorMessage } from '../../'
-import { AuthMain } from './../../../layouts/auth-layout/auth-layout.styles'
+import { AuthMain } from '../../../layouts/auth-layout/auth-layout.styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'

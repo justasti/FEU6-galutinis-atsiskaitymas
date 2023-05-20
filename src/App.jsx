@@ -1,8 +1,4 @@
-import {
-  RouterProvider,
-  createBrowserRouter,
-  useLocation,
-} from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/main-layout/main.layout'
 import {
@@ -11,8 +7,8 @@ import {
   LoginPage,
   SignupPage,
   UserProfilePage,
+  AddQuestionPage,
 } from './features'
-import { useEffect } from 'react'
 
 function App() {
   const router = createBrowserRouter([
@@ -29,8 +25,17 @@ function App() {
           element: <QuestionsList />,
         },
         {
-          path: '/questions/:id',
-          element: <QuestionPage />,
+          path: '/questions/',
+          children: [
+            {
+              path: ':id',
+              element: <QuestionPage />,
+            },
+            {
+              path: 'add',
+              element: <AddQuestionPage />,
+            },
+          ],
         },
         {
           path: '/user/:id',

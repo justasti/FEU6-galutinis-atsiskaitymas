@@ -19,7 +19,7 @@ const AnswersList = ({ id }) => {
   if (!answers.length)
     return (
       <>
-        <h2>No answers yet</h2>
+        <h2 style={{ marginBlock: 30 }}>No answers yet</h2>
         <AddAnswer questionId={id} />
       </>
     )

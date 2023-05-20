@@ -22,9 +22,17 @@ const questionsApi = createApi({
       query: () => '/',
       providesTags: ['Tags'],
       transformResponse: response => [...new Set(response.map(question => question.tag))].sort((a, b) => a.localeCompare(b))
+    }),
+    addNewQuestion: builder.mutation({
+      query: (question) => ({
+        url: '/',
+        method: 'POST',
+        body: question
+      }),
+      invalidatesTags: ['Questions', 'Tags']
     })
   })
 })
 
-export const { useGetQuestionsQuery, useGetQuestionByIdQuery, useGetQuestionsTagsQuery, useGetQuestionByUserIdQuery } = questionsApi
+export const { useGetQuestionsQuery, useGetQuestionByIdQuery, useGetQuestionsTagsQuery, useGetQuestionByUserIdQuery, useAddNewQuestionMutation } = questionsApi
 export default questionsApi

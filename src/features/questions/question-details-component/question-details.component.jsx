@@ -7,6 +7,7 @@ import { useGetUserByIdQuery } from '../../users/users.api'
 import { skipToken } from '@reduxjs/toolkit/dist/query'
 import { Link } from 'react-router-dom'
 import { QuestionTag } from '../../'
+import DOMPurify from 'dompurify'
 
 const QuestionDetails = ({ id }) => {
   const {
@@ -51,7 +52,13 @@ const QuestionDetails = ({ id }) => {
               <FontAwesomeIcon icon={faCaretDown} />
             </div>
             <div className='question-content'>
-              <p>{detailedQuestion.content}</p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(detailedQuestion.content),
+                }}
+              >
+                {}
+              </p>
               <QuestionTag tag={detailedQuestion.tag} />
             </div>
             <div className='author-info'>
