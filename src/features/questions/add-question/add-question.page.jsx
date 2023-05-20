@@ -4,24 +4,43 @@ import { StyledQuestionForm } from './add-question-page.styles'
 import {
   useAddNewQuestionMutation,
   useGetQuestionsTagsQuery,
+  useGetQuestionsQuery,
+  useEditQuestionMutation,
 } from '../questions.api'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ReactQuill from 'react-quill'
 import { nanoid } from '@reduxjs/toolkit'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 
 const AddQuestionPage = () => {
   const navigate = useNavigate()
+  const { id } = useParams()
   const [addQuestion] = useAddNewQuestionMutation()
+  const [editQuestion] = useEditQuestionMutation()
   const { data: tags, isLoading } = useGetQuestionsTagsQuery()
   const { authUser } = useSelector((state) => state.users)
   const [tag, setTag] = useState('')
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [errorSubmitting, setErrorSubmitting] = useState(false)
+  const [existingQuestion, setExistingQuestion] = useState(null)
+  const { data: questions, isLoading: questionsLoading } =
+    useGetQuestionsQuery()
 
-  if (isLoading) return <p>Loading...</p>
+  useEffect(() => {
+    if (id) {
+      const question = questions?.find((q) => q.id === id)
+      if (question) {
+        setTag({ label: question.tag, value: question.tag })
+        setTitle(question.title)
+        setContent(question.content)
+        setExistingQuestion(question)
+      }
+    }
+  }, [questions])
+
+  if (isLoading || questionsLoading) return <p>Loading...</p>
 
   const customStyles = {
     option: (provided, state) => ({
@@ -69,21 +88,32 @@ const AddQuestionPage = () => {
       setErrorSubmitting(true)
       return
     }
-    const newQuestion = {
-      id,
-      title,
-      content,
-      tag: tag.value,
-      userId: authUser.id,
-      datePosted: new Date().toISOString(),
-      isEdited: false,
-      ratings: [],
+    const newId = nanoid()
+    if (id) {
+      const updatedQuestion = {
+        ...existingQuestion,
+        title,
+        content,
+        tag: tag.value,
+        isEdited: true,
+        dateEdited: new Date().toISOString(),
+      }
+      editQuestion(updatedQuestion)
+    } else {
+      const newQuestion = {
+        id: newId,
+        title,
+        content,
+        tag: tag.value,
+        userId: authUser.id,
+        datePosted: new Date().toISOString(),
+        isEdited: false,
+        ratings: [],
+      }
+      addQuestion(newQuestion)
     }
-    addQuestion(newQuestion)
-    navigate(`/questions/${id}`)
+    navigate(`/questions/${id || newId}`)
   }
-
-  const id = nanoid()
 
   return (
     <StyledQuestionForm onSubmit={handleSubmit}>
@@ -123,7 +153,7 @@ const AddQuestionPage = () => {
           </ErrorMessage>
         )}
       </div>
-      <Button>Create Question</Button>
+      <Button>{id ? 'Update' : 'Create'} Question</Button>
     </StyledQuestionForm>
   )
 }

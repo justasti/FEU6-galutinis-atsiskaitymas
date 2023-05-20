@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/main-layout/main.layout'
 import {
@@ -9,8 +9,10 @@ import {
   UserProfilePage,
   AddQuestionPage,
 } from './features'
+import { useSelector } from 'react-redux'
 
 function App() {
+  const { authUser } = useSelector((state) => state.users)
   const router = createBrowserRouter([
     {
       path: '/',
@@ -32,8 +34,20 @@ function App() {
               element: <QuestionPage />,
             },
             {
+              path: ':id/edit',
+              element: authUser ? (
+                <AddQuestionPage />
+              ) : (
+                <Navigate to='/login' />
+              ),
+            },
+            {
               path: 'add',
-              element: <AddQuestionPage />,
+              element: authUser ? (
+                <AddQuestionPage />
+              ) : (
+                <Navigate to='/login' />
+              ),
             },
           ],
         },
