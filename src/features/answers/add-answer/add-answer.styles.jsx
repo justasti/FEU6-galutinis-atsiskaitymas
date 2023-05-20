@@ -5,19 +5,12 @@ export const NewAnswerForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: end;
-  gap: 15px;
-  textarea {
-    padding: 10px;
-    font-size: 1rem;
+  gap: 50px;
+  .quill {
     width: 100%;
     height: 250px;
-  }
-  input[type='submit'] {
-    padding: 8px 15px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    background-color: transparent;
-    text-align: right;
+    .ql-editor {
+      margin-bottom: 50px;
+    }
   }
 `

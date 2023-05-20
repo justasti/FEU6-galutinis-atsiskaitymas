@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import { useDeleteAnswerMutation } from '../answers.api'
+import DOMPurify from 'dompurify'
 
 const Answer = ({ answer, onEditAnswer }) => {
   const { data: answeredBy } = useGetUserByIdQuery(answer.userId)
@@ -29,7 +30,12 @@ const Answer = ({ answer, onEditAnswer }) => {
         <FontAwesomeIcon icon={faCaretDown} />
       </div>
       <div className='answer-content'>
-        <p data-answer-id={answer.id}>{answer.content}</p>
+        <p
+          data-answer-id={answer.id}
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(answer.content),
+          }}
+        ></p>
         {answer.isEdited && (
           <div className='date-info'>
             {parsedEditedDate && (
