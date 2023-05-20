@@ -27,16 +27,24 @@ a:hover {
 .login-to a {
   color: darkgoldenrod;
 }
-.sort-type {
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 15px;
+}
+.sort-type,
+.filter-type {
   display: flex;
   gap: 15px;
   margin-bottom: 15px;
 }
-.sort-type span {
+.sort-type span,
+.filter-type span {
   font-weight: 500;
   cursor: pointer;
 }
-.sort-type span:hover {
+.sort-type span:hover,
+.filter-type span:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }

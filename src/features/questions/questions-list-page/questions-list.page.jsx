@@ -7,6 +7,7 @@ import { useGetAnswersQuery } from '../../answers/answers.api'
 
 const QuestionsList = () => {
   const [sort, setSort] = useState(null)
+  const [filter, setFilter] = useState(null)
   const [order, setOrder] = useState('desc')
   const [params, setParams] = useSearchParams()
   const {
@@ -27,7 +28,7 @@ const QuestionsList = () => {
   if (questionsLoading || answersLoading) return <p>Loading...</p>
 
   let filteredQuestions = [...questions]
-  if (sort) {
+  if (sort || filter) {
     if (sort === 'date') {
       filteredQuestions = filteredQuestions.sort((a, b) =>
         order === 'desc'
@@ -52,44 +53,79 @@ const QuestionsList = () => {
         return order === 'desc' ? answersB - answersA : answersA - answersB
       })
     }
-  } else {
-    filteredQuestions = questions
+    if (filter === 'answered') {
+      filteredQuestions = filteredQuestions.filter((question) => {
+        return answers.filter((answer) => answer.questionId === question.id)
+          .length
+      })
+    } else if (filter === 'unanswered') {
+      filteredQuestions = filteredQuestions.filter((question) => {
+        return !answers.filter((answer) => answer.questionId === question.id)
+          .length
+      })
+    }
   }
 
   return (
     <>
-      <div className='sort-type'>
-        <p>Sort by: </p>
-        <span
-          onClick={() =>
-            setParams({
-              sort: 'date',
-              order: order === 'asc' ? 'desc' : 'asc',
-            })
-          }
-        >
-          Date
-        </span>
-        <span
-          onClick={() =>
-            setParams({
-              sort: 'rating',
-              order: order === 'asc' ? 'desc' : 'asc',
-            })
-          }
-        >
-          Rating
-        </span>
-        <span
-          onClick={() =>
-            setParams({
-              sort: 'answers',
-              order: order === 'asc' ? 'desc' : 'asc',
-            })
-          }
-        >
-          Answers
-        </span>
+      <div className='filters'>
+        <div className='sort-type'>
+          <p>Sort by: </p>
+          <span
+            onClick={() =>
+              setParams({
+                sort: 'date',
+                order: order === 'asc' ? 'desc' : 'asc',
+              })
+            }
+          >
+            Date
+          </span>
+          <span
+            onClick={() =>
+              setParams({
+                sort: 'rating',
+                order: order === 'asc' ? 'desc' : 'asc',
+              })
+            }
+          >
+            Rating
+          </span>
+          <span
+            onClick={() =>
+              setParams({
+                sort: 'answers',
+                order: order === 'asc' ? 'desc' : 'asc',
+              })
+            }
+          >
+            Answers
+          </span>
+        </div>
+        <div className='filter-type'>
+          <p>Filter:</p>
+          <span
+            onClick={() => {
+              setFilter(null)
+            }}
+          >
+            All
+          </span>
+          <span
+            onClick={() => {
+              setFilter('answered')
+            }}
+          >
+            Answered
+          </span>
+          <span
+            onClick={() => {
+              setFilter('unanswered')
+            }}
+          >
+            Unanswered
+          </span>
+        </div>
       </div>
       <QuestionsContainer>
         {filteredQuestions.map((question) => {
