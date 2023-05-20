@@ -157,6 +157,16 @@
       "isEdited": false,
       "ratings": [],
       "tag": "react.js"
+    },
+    {
+      "id": "_a-HMp-n7IFtGApqtbdbX",
+      "title": "How to use wikipedia data downloaded from Hugging face in pyspark",
+      "content": "<p>I am following -&nbsp;<a href=\"https://huggingface.co/datasets/wikipedia/blob/main/README.md\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">https://huggingface.co/datasets/wikipedia/blob/main/README.md</a>&nbsp;, from hugging face to download dataset of wikipedia , for NLP</p><p>I ran the below command as per the hugging face to downlaod dataset</p><p>from datasets import load_dataset load_dataset(\"wikipedia\", \"20220301.en\")</p><p>These two files got downloaded , how do i use this file (wikipedia-train.arrow) to read the data in pyspark</p><p>total 19800320 -rw------- 1 root root 20275516160 May 19 20:43 wikipedia-train.arrow -rw------- 1 root root 1135 May 19 20:43 dataset_info.json</p><p><a href=\"https://i.stack.imgur.com/doeNj.png\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">data set is like this from hugging face for wikipedia</a></p><p>I am trying to read this wikipedia-train.arrow as parquet</p><p>f = spark.read.parquet(\"dbfs:/databricks/wikipedia-train.arrow\")</p><p>-rw------- 1 root root 20275516160 May 19 20:43 wikipedia-train.arrow -rw------- 1 root root 1135 May 19 20:43 dataset_info.json</p>",
+      "tag": "nlp",
+      "userId": "1J__qRljs8mXF3k5UiA-W",
+      "datePosted": "2023-05-20T07:41:47.578Z",
+      "isEdited": false,
+      "ratings": []
     }
   ],
   "answers": [
