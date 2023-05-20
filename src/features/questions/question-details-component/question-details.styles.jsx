@@ -10,12 +10,31 @@ export const DetailedQuestionContainer = styled.div`
     font-weight: 500;
     color: #5c5c5c;
   }
-  .date-info {
+  .top-row {
     display: flex;
-    gap: 30px;
-    font-size: 0.9rem;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #bbb;
     padding-bottom: 15px;
+    .date-info {
+      align-items: center;
+      display: flex;
+      gap: 30px;
+      font-size: 0.9rem;
+    }
+    .actions {
+      font-size: 1.5rem;
+      display: flex;
+      gap: 20px;
+      span:first-of-type {
+        color: red;
+        cursor: pointer;
+      }
+      span:last-of-type {
+        color: #ff8922;
+        cursor: pointer;
+      }
+    }
   }
   .question-info {
     margin-top: 20px;

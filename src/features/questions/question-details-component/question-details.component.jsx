@@ -1,20 +1,32 @@
-import { useGetQuestionByIdQuery } from '../questions.api'
+import {
+  useDeleteQuestionMutation,
+  useGetQuestionByIdQuery,
+} from '../questions.api'
 import { formatDistanceToNow } from 'date-fns'
 import { DetailedQuestionContainer } from './question-details.styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCaretUp,
+  faCaretDown,
+  faTrash,
+  faPencilAlt,
+} from '@fortawesome/free-solid-svg-icons'
 import { useGetUserByIdQuery } from '../../users/users.api'
 import { skipToken } from '@reduxjs/toolkit/dist/query'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { QuestionTag } from '../../'
 import DOMPurify from 'dompurify'
+import { useSelector } from 'react-redux'
 
 const QuestionDetails = ({ id }) => {
+  const navigate = useNavigate()
+  const { authUser } = useSelector((state) => state.users)
   const {
     data: detailedQuestion,
     isLoading: questionIsLoading,
     isSuccess,
   } = useGetQuestionByIdQuery(id)
+  const [deleteQuestion] = useDeleteQuestionMutation()
 
   const { data: askedBy } = useGetUserByIdQuery(
     detailedQuestion?.userId ?? skipToken
@@ -41,9 +53,26 @@ const QuestionDetails = ({ id }) => {
       {isSuccess && (
         <DetailedQuestionContainer>
           <h2>{detailedQuestion.title}</h2>
-          <div className='date-info'>
-            <p>Asked {askedDateDifference}</p>
-            {parsedEditedDate && <p>Edited {parsedEditedDate}</p>}
+          <div className='top-row'>
+            <div className='date-info'>
+              <p>Asked {askedDateDifference}</p>
+              {parsedEditedDate && <p>Edited {parsedEditedDate}</p>}
+            </div>
+            {authUser?.id === askedBy?.id && (
+              <div className='actions'>
+                <span
+                  onClick={() => {
+                    deleteQuestion(detailedQuestion.id)
+                    navigate('/')
+                  }}
+                >
+                  <FontAwesomeIcon icon={faTrash} />
+                </span>
+                <span onClick={() => navigate('edit')}>
+                  <FontAwesomeIcon icon={faPencilAlt} />
+                </span>
+              </div>
+            )}
           </div>
           <div className='question-info'>
             <div className='ratings'>
