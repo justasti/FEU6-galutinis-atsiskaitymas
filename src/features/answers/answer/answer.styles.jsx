@@ -67,6 +67,8 @@ export const AnswerContainer = styled.div`
         margin: 1rem 0 1rem 2rem;
         position: relative;
         font-size: 0.9rem;
+        max-height: 300px;
+        overflow: auto;
         &::before {
           position: absolute;
           top: 5px;
