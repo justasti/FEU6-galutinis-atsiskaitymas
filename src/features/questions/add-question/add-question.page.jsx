@@ -32,6 +32,10 @@ const AddQuestionPage = () => {
     if (id) {
       const question = questions?.find((q) => q.id === id)
       if (question) {
+        if (question.userId !== authUser?.id) {
+          navigate(`/questions/${id}`)
+          return
+        }
         setTag({ label: question.tag, value: question.tag })
         setTitle(question.title)
         setContent(question.content)
