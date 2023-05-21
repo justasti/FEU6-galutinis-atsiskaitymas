@@ -1,11 +1,14 @@
 import { useGetQuestionsTagsQuery } from '../../questions/questions.api'
 import { StyledSideNav } from './sidenav.styles'
+import { Button } from '../../'
 import { Link } from 'react-router-dom'
 const SideNav = () => {
   const { data: tags } = useGetQuestionsTagsQuery()
   return (
     <StyledSideNav>
-      <button>New Discussion</button>
+      <Link to='/questions/add'>
+        <Button variant='inverted'>New Discussion</Button>
+      </Link>
       <ul>
         <li>
           <Link to='/'>All</Link>

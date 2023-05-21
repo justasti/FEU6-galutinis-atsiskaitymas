@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { useGetAnswersQuery } from '../../answers/answers.api'
 
 const QuestionsList = () => {
-  const [sort, setSort] = useState(null)
+  const [sort, setSort] = useState('date')
   const [filter, setFilter] = useState(null)
   const [order, setOrder] = useState('desc')
   const [params, setParams] = useSearchParams()
@@ -18,8 +18,8 @@ const QuestionsList = () => {
   const { data: answers, isLoading: answersLoading } = useGetAnswersQuery()
 
   useEffect(() => {
-    const sortParam = params.get('sort')
-    const orderParam = params.get('order') || 'asc'
+    const sortParam = params.get('sort') || 'date'
+    const orderParam = params.get('order') || 'desc'
     setSort(sortParam)
     setOrder(orderParam)
   }, [params])

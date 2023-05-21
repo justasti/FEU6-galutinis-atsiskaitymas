@@ -178,6 +178,16 @@
       "datePosted": "2023-05-20T07:50:47.426Z",
       "isEdited": false,
       "ratings": []
+    },
+    {
+      "id": "NWMrYSGo0_EUTlqs5VcsM",
+      "title": "hello",
+      "content": "<p><span style=\"color: rgb(230, 0, 0);\">justelis</span></p>",
+      "tag": "react.js",
+      "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+      "datePosted": "2023-05-20T18:49:29.391Z",
+      "isEdited": false,
+      "ratings": []
     }
   ],
   "answers": [
@@ -358,8 +368,9 @@
       "questionId": "SbEVp9czazw4Mx7aHIuo8",
       "content": "<p>try this little modification here :</p><p>class _MyAppState extends State { late Widget initialPage = const LoadingPage();</p><pre class=\"ql-syntax\" spellcheck=\"false\">@override\n  void initState() {\n    super.initState();\n    if (widget.loggedIn &amp;&amp; widget.user != null) {\n      updateInitialPage();\n    }\n  }\n\n  void updateInitialPage() {\n    if (widget.user!.userType == 'Student') {\n      initialPage = const StudentPage();\n    } else if (widget.user!.userType == 'Professor') {\n      initialPage = const ProfessorPage();\n    } else {\n      initialPage = Welcome();\n      print('Returning to Welcome Screen 1...');\n    }\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      debugShowCheckedModeBanner: false,\n      title: 'Institution Code',\n      theme: ThemeData(\n          scaffoldBackgroundColor: const Color.fromARGB(255, 239, 239, 239)),\n      routes: {\n        '/': (context) =&gt; initialPage,\n        '/login': (context) =&gt; Welcome(),\n      },\n      initialRoute: '/',\n    );\n  }\n\n  @override\n  void didUpdateWidget(MyApp oldWidget) {\n    super.didUpdateWidget(oldWidget);\n    if (widget.loggedIn &amp;&amp; widget.user != null) {\n      updateInitialPage();\n      setState(() {});\n    }\n  }\n}\n</pre>",
       "datePosted": "2023-05-20T07:55:30.622Z",
-      "isEdited": false,
-      "ratings": []
+      "isEdited": true,
+      "ratings": [],
+      "dateEdited": "2023-05-20T18:51:49.187Z"
     },
     {
       "id": "6ludmqhIRcpUcYGr3e2PZ",

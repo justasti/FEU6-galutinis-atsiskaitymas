@@ -7,5 +7,11 @@ export const StyledSideNav = styled.aside`
   position: sticky;
   top: 120px;
   height: max-content;
-  padding-right: 20px;
+  > ul {
+    margin-top: 20px;
+    list-style: none;
+    ul {
+      list-style: none;
+    }
+  }
 `
