@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 import { QuestionPreview } from '../..'
 import { useGetQuestionsQuery } from '../questions.api'
 import { QuestionsContainer } from './questions-list.styles'
@@ -15,6 +15,7 @@ const QuestionsList = () => {
     isLoading: questionsLoading,
     isError,
   } = useGetQuestionsQuery()
+  const { tag } = useParams()
   const { data: answers, isLoading: answersLoading } = useGetAnswersQuery()
 
   useEffect(() => {
@@ -28,6 +29,11 @@ const QuestionsList = () => {
   if (questionsLoading || answersLoading) return <p>Loading...</p>
 
   let filteredQuestions = [...questions]
+
+  if (tag) {
+    filteredQuestions = [...questions.filter((q) => q.tag === tag)]
+  }
+
   if (sort || filter) {
     if (sort === 'date') {
       filteredQuestions = filteredQuestions.sort((a, b) =>
@@ -128,18 +134,22 @@ const QuestionsList = () => {
         </div>
       </div>
       <QuestionsContainer>
-        {filteredQuestions.map((question) => {
-          const answersForQuestion = [...answers].filter(
-            (answer) => answer.questionId === question.id
-          )
-          return (
-            <QuestionPreview
-              question={question}
-              answers={answersForQuestion}
-              key={question.id}
-            />
-          )
-        })}
+        {filteredQuestions.length ? (
+          filteredQuestions.map((question) => {
+            const answersForQuestion = [...answers].filter(
+              (answer) => answer.questionId === question.id
+            )
+            return (
+              <QuestionPreview
+                question={question}
+                answers={answersForQuestion}
+                key={question.id}
+              />
+            )
+          })
+        ) : (
+          <h2>No Questions Found!</h2>
+        )}
       </QuestionsContainer>
     </>
   )
