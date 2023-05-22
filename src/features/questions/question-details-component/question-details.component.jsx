@@ -1,6 +1,7 @@
 import {
   useDeleteQuestionMutation,
   useGetQuestionByIdQuery,
+  useUpdateQuestionMutation,
 } from '../questions.api'
 import { formatDistanceToNow } from 'date-fns'
 import { DetailedQuestionContainer } from './question-details.styles'
@@ -27,9 +28,42 @@ const QuestionDetails = ({ id }) => {
     isSuccess,
   } = useGetQuestionByIdQuery(id)
   const [deleteQuestion] = useDeleteQuestionMutation()
+  const [updateQuestion] = useUpdateQuestionMutation()
 
   const { data: askedBy } = useGetUserByIdQuery(
     detailedQuestion?.userId ?? skipToken
+  )
+  const existingRating = detailedQuestion?.ratings.find(
+    (r) => r.userId === authUser?.id
+  )
+
+  const rate = (rating) => {
+    if (!authUser) {
+      navigate('/login')
+      return
+    }
+    let newRating
+    if (existingRating && existingRating.rating === rating) {
+      newRating = 0
+    } else {
+      newRating = rating
+    }
+    const updatedRating = { userId: authUser.id, rating: newRating }
+    let updatedRatings = [...detailedQuestion.ratings] || []
+    if (existingRating) {
+      updatedRatings = detailedQuestion.ratings.map((rating) =>
+        rating.userId === authUser.id ? updatedRating : rating
+      )
+    } else {
+      updatedRatings.push(updatedRating)
+    }
+    const updatedQuestion = { ...detailedQuestion, ratings: updatedRatings }
+    updateQuestion(updatedQuestion)
+  }
+
+  const questionRatings = detailedQuestion?.ratings.reduce(
+    (a, v) => a + v.rating,
+    0
   )
 
   const askedDateDifference =
@@ -47,64 +81,71 @@ const QuestionDetails = ({ id }) => {
     detailedQuestion?.isEdited &&
     new Date(detailedQuestion.dateEdited).toLocaleString('lt-LT')
 
+  if (questionIsLoading) return <p>Loading...</p>
+
   return (
     <>
-      {questionIsLoading && <p>Loading...</p>}
-      {isSuccess && (
-        <DetailedQuestionContainer>
-          <h2>{detailedQuestion.title}</h2>
-          <div className='top-row'>
-            <div className='date-info'>
-              <p>Asked {askedDateDifference}</p>
-              {parsedEditedDate && <p>Edited {parsedEditedDate}</p>}
-            </div>
-            {authUser?.id === askedBy?.id && (
-              <div className='actions'>
-                <span
-                  onClick={() => {
-                    deleteQuestion(detailedQuestion.id)
-                    navigate('/')
-                  }}
-                >
-                  <FontAwesomeIcon icon={faTrash} />
-                </span>
-                <span onClick={() => navigate('edit')}>
-                  <FontAwesomeIcon icon={faPencilAlt} />
-                </span>
-              </div>
-            )}
+      <DetailedQuestionContainer>
+        <h2>{detailedQuestion.title}</h2>
+        <div className='top-row'>
+          <div className='date-info'>
+            <p>Asked {askedDateDifference}</p>
+            {parsedEditedDate && <p>Edited {parsedEditedDate}</p>}
           </div>
-          <div className='question-info'>
-            <div className='ratings'>
-              <FontAwesomeIcon icon={faCaretUp} />
-              <span>0</span>
-              <FontAwesomeIcon icon={faCaretDown} />
-            </div>
-            <div className='question-content'>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(detailedQuestion.content),
+          {authUser?.id === askedBy?.id && (
+            <div className='actions'>
+              <span
+                onClick={() => {
+                  deleteQuestion(detailedQuestion.id)
+                  navigate('/')
                 }}
               >
-                {}
-              </p>
-              <QuestionTag tag={detailedQuestion.tag} />
+                <FontAwesomeIcon icon={faTrash} />
+              </span>
+              <span onClick={() => navigate('edit')}>
+                <FontAwesomeIcon icon={faPencilAlt} />
+              </span>
             </div>
-            <div className='author-info'>
-              <p>asked {parsedAskedDate}</p>
-              <div>
-                <img src={askedBy?.avatarUrl} alt={askedBy?.username} />
-                <p>
-                  by{' '}
-                  <strong>
-                    <Link to={`/user/${askedBy?.id}`}>{askedBy?.username}</Link>
-                  </strong>
-                </p>
-              </div>
+          )}
+        </div>
+        <div className='question-info'>
+          <div className='ratings'>
+            <FontAwesomeIcon
+              icon={faCaretUp}
+              style={{ color: existingRating?.rating === 1 ? '#f00' : '333' }}
+              onClick={() => rate(1)}
+            />
+            <span>{questionRatings}</span>
+            <FontAwesomeIcon
+              icon={faCaretDown}
+              style={{ color: existingRating?.rating === -1 ? '#f00' : '333' }}
+              onClick={() => rate(-1)}
+            />
+          </div>
+          <div className='question-content'>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(detailedQuestion.content),
+              }}
+            >
+              {}
+            </p>
+            <QuestionTag tag={detailedQuestion.tag} />
+          </div>
+          <div className='author-info'>
+            <p>asked {parsedAskedDate}</p>
+            <div>
+              <img src={askedBy?.avatarUrl} alt={askedBy?.username} />
+              <p>
+                by{' '}
+                <strong>
+                  <Link to={`/user/${askedBy?.id}`}>{askedBy?.username}</Link>
+                </strong>
+              </p>
             </div>
           </div>
-        </DetailedQuestionContainer>
-      )}
+        </div>
+      </DetailedQuestionContainer>
     </>
   )
 }

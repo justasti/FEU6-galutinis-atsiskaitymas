@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useGetAnswersByQuestionIdQuery } from '../../answers/answers.api'
 import { useGetUserByIdQuery } from '../../users/users.api'
 import { formatDistanceToNow } from 'date-fns'
 import { faComment, faStar } from '@fortawesome/free-regular-svg-icons'
@@ -13,6 +12,7 @@ const QuestionPreview = ({ question, answers }) => {
     addSuffix: true,
     includeSeconds: true,
   })
+  const questionRatings = question.ratings.reduce((a, v) => a + v.rating, 0)
   return (
     <StyledQuestionPreview>
       <img src={askedBy?.avatarUrl} alt={askedBy?.username} />
@@ -32,11 +32,11 @@ const QuestionPreview = ({ question, answers }) => {
       <div className='question-stats'>
         <span>
           <FontAwesomeIcon icon={faComment} />
-          {answers?.length}
+          {answers?.length || 0}
         </span>
         <span>
           <FontAwesomeIcon icon={faStar} />
-          {question.ratings.length}
+          {questionRatings}
         </span>
       </div>
     </StyledQuestionPreview>

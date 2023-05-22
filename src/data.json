@@ -62,6 +62,15 @@
       "dateEdited": "2023-04-21T15:02:16Z",
       "ratings": [
         {
+          "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+          "rating": -1
+        },
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
+        },
+        {
+          "userId": "Erb8FeeTAYgttYuL4V2fc",
           "rating": 1
         }
       ],
@@ -105,7 +114,16 @@
       "userId": "JMBbA023TX47kEw4Mzz-L",
       "datePosted": "2023-05-07T15:55:00Z",
       "isEdited": false,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
+        },
+        {
+          "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+          "rating": -1
+        }
+      ],
       "tag": "sql"
     },
     {
@@ -166,7 +184,12 @@
       "userId": "1J__qRljs8mXF3k5UiA-W",
       "datePosted": "2023-05-20T07:41:47.578Z",
       "isEdited": true,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 0
+        }
+      ],
       "dateEdited": "2023-05-20T08:51:42.986Z"
     },
     {
@@ -177,17 +200,12 @@
       "userId": "d-03rCUCA_QARi_wp47Ze",
       "datePosted": "2023-05-20T07:50:47.426Z",
       "isEdited": false,
-      "ratings": []
-    },
-    {
-      "id": "NWMrYSGo0_EUTlqs5VcsM",
-      "title": "hello",
-      "content": "<p><span style=\"color: rgb(230, 0, 0);\">justelis</span></p>",
-      "tag": "react.js",
-      "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
-      "datePosted": "2023-05-20T18:49:29.391Z",
-      "isEdited": false,
-      "ratings": []
+      "ratings": [
+        {
+          "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+          "rating": 0
+        }
+      ]
     }
   ],
   "answers": [
@@ -269,7 +287,16 @@
       "content": "To install packages using pip, you can use the following command:\npip install package_name - replace package_name with the name of the package you want to install. \n\nYou can install multiple packages by listing them one after another:\npip install package1 package2 package3\n\nYou can also specify a specific version of a package to install:\npip install package_name==1.0.0\n\nIf you want to upgrade an already installed package to the latest version, you can use the --upgrade flag:\npip install --upgrade package_name\n\nAdditionally, you can install packages from a requirements.txt file that lists all the required packages and their versions. Assuming you have a requirements.txt file in your current directory, you can use the following command to install the packages:\npip install -r requirements.txt\n\nThese are the basic commands for installing packages using pip. Keep in mind that pip should be installed and available in your system's PATH for these commands to work.",
       "datePosted": "2023-05-18T12:46:25.939Z",
       "isEdited": false,
-      "ratings": []
+      "ratings": [
+        {
+          "userId": "Erb8FeeTAYgttYuL4V2fc",
+          "rating": 1
+        },
+        {
+          "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+          "rating": 0
+        }
+      ]
     },
     {
       "id": "KL3W4ial8kPRjFbolTVHE",
@@ -332,7 +359,12 @@
       "content": "<p>When handling null values in SQL queries, you need to consider the specific requirements of your query and how you want to handle nulls.</p><p>Here are some common approaches:</p><blockquote class=\"ql-indent-1\">IS NULL / IS NOT NULL:</blockquote><p>Use the IS NULL or IS NOT NULL operators to filter or compare against null values. For example, to select rows where a specific column is null:</p><pre class=\"ql-syntax\" spellcheck=\"false\">SELECT * FROM table_name WHERE column_name IS NULL; \n</pre><blockquote class=\"ql-indent-1\">COALESCE:</blockquote><p>The COALESCE function allows you to substitute a null value with a specified default value. It returns the first non-null value from a list of expressions. For example, to retrieve a column's value or a default value if it's null: \\</p><pre class=\"ql-syntax\" spellcheck=\"false\">SELECT COALESCE(column_name, 'default_value') FROM table_name;\n</pre><blockquote class=\"ql-indent-1\">IFNULL / NVL:</blockquote><p>These functions are similar to COALESCE and provide a way to handle null values. They return the first non-null value from a list of expressions. The IFNULL function is typically used in MySQL, while NVL is commonly used in Oracle databases. For example:</p><pre class=\"ql-syntax\" spellcheck=\"false\">-- MySQL\n SELECT IFNULL(column_name, 'default_value') FROM table_name; \n-- Oracle \nSELECT NVL(column_name, 'default_value') FROM table_name;\n</pre><blockquote class=\"ql-indent-1\">CASE statement:</blockquote><p>The CASE statement allows you to perform conditional logic based on null values. You can specify different actions or values based on whether a column is null or not. For example:</p><pre class=\"ql-syntax\" spellcheck=\"false\">SELECT\nCASE\nWHEN column_name IS NULL THEN 'Value if null' \nELSE 'Value if not null' END\nFROM table_name; \n</pre><p>These are some of the common techniques for handling null values in SQL queries. The approach you choose depends on the specific requirements and the logic you want to implement in your query.</p>",
       "datePosted": "2023-05-18T13:10:47.776Z",
       "isEdited": true,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+          "rating": -1
+        }
+      ],
       "dateEdited": "2023-05-19T16:53:26.199Z"
     },
     {
@@ -369,7 +401,12 @@
       "content": "<p>try this little modification here :</p><p>class _MyAppState extends State { late Widget initialPage = const LoadingPage();</p><pre class=\"ql-syntax\" spellcheck=\"false\">@override\n  void initState() {\n    super.initState();\n    if (widget.loggedIn &amp;&amp; widget.user != null) {\n      updateInitialPage();\n    }\n  }\n\n  void updateInitialPage() {\n    if (widget.user!.userType == 'Student') {\n      initialPage = const StudentPage();\n    } else if (widget.user!.userType == 'Professor') {\n      initialPage = const ProfessorPage();\n    } else {\n      initialPage = Welcome();\n      print('Returning to Welcome Screen 1...');\n    }\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      debugShowCheckedModeBanner: false,\n      title: 'Institution Code',\n      theme: ThemeData(\n          scaffoldBackgroundColor: const Color.fromARGB(255, 239, 239, 239)),\n      routes: {\n        '/': (context) =&gt; initialPage,\n        '/login': (context) =&gt; Welcome(),\n      },\n      initialRoute: '/',\n    );\n  }\n\n  @override\n  void didUpdateWidget(MyApp oldWidget) {\n    super.didUpdateWidget(oldWidget);\n    if (widget.loggedIn &amp;&amp; widget.user != null) {\n      updateInitialPage();\n      setState(() {});\n    }\n  }\n}\n</pre>",
       "datePosted": "2023-05-20T07:55:30.622Z",
       "isEdited": true,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+          "rating": 0
+        }
+      ],
       "dateEdited": "2023-05-20T18:51:49.187Z"
     },
     {
@@ -379,7 +416,12 @@
       "content": "<p>The issue was with the login and signup pages. They were by default set to navigate to the ProfessorPage(). But after the app was restarted, the main() takes control, which navigates the user based on the&nbsp;<code style=\"background-color: var(--black-075); color: rgb(230, 0, 0);\"><u>userType</u></code>.</p><p>The solution here was to add&nbsp;<code style=\"background-color: var(--black-075); color: var(--black-800);\">if-else statements</code>&nbsp;to the login and signup pages to navigate based on the fetched&nbsp;<code style=\"background-color: var(--black-075); color: rgb(230, 0, 0);\"><u>use﻿rType</u></code><u>.</u></p>",
       "datePosted": "2023-05-20T07:56:50.045Z",
       "isEdited": true,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": -1
+        }
+      ],
       "dateEdited": "2023-05-20T07:56:59.238Z"
     }
   ],
