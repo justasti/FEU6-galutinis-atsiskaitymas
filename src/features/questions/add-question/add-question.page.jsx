@@ -23,7 +23,6 @@ const AddQuestionPage = () => {
   const [tag, setTag] = useState('')
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
-  const [errorSubmitting, setErrorSubmitting] = useState(false)
   const [existingQuestion, setExistingQuestion] = useState(null)
   const [addQuestion] = useAddNewQuestionMutation()
   const [updateQuestion] = useUpdateQuestionMutation()
@@ -82,19 +81,16 @@ const AddQuestionPage = () => {
   const selectOptions = tags.map((tag) => ({ label: tag, value: tag }))
 
   const handleSelectChange = (value) => {
-    setErrorSubmitting(false)
     setTag(value)
   }
 
   const handleTitleChange = (e) => {
-    setErrorSubmitting(false)
     setTitle(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!title || !tag || !content) {
-      setErrorSubmitting(true)
       return
     }
     const newId = nanoid()
