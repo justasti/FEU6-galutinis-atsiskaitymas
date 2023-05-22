@@ -18,7 +18,12 @@
       "userId": "uKVgbjiMjB_SFc6O4Vo63",
       "datePosted": "2023-04-25T02:45:32Z",
       "isEdited": false,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": -1
+        }
+      ],
       "tag": "python"
     },
     {
@@ -83,7 +88,16 @@
       "userId": "aMwy8sQwCtUf12ct8107c",
       "datePosted": "2023-04-10T09:24:11Z",
       "isEdited": false,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
+        },
+        {
+          "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+          "rating": 1
+        }
+      ],
       "tag": "react.js"
     },
     {
@@ -178,8 +192,8 @@
     },
     {
       "id": "_a-HMp-n7IFtGApqtbdbX",
-      "title": "How to use wikipedia data downloaded from Hugging face in pyspark",
-      "content": "<p>Hi!</p><p>I am following -&nbsp;<a href=\"https://huggingface.co/datasets/wikipedia/blob/main/README.md\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">https://huggingface.co/datasets/wikipedia/blob/main/README.md</a>&nbsp;, from hugging face to download dataset of wikipedia , for NLP</p><p>I ran the below command as per the hugging face to downlaod dataset</p><p>from datasets import load_dataset load_dataset(\"wikipedia\", \"20220301.en\")</p><p>These two files got downloaded , how do i use this file (wikipedia-train.arrow) to read the data in pyspark</p><p>total 19800320 -rw------- 1 root root 20275516160 May 19 20:43 wikipedia-train.arrow -rw------- 1 root root 1135 May 19 20:43 dataset_info.json</p><p><a href=\"https://i.stack.imgur.com/doeNj.png\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">data set is like this from hugging face for wikipedia</a></p><p>I am trying to read this wikipedia-train.arrow as parquet</p><p>f = spark.read.parquet(\"dbfs:/databricks/wikipedia-train.arrow\")</p><p>-rw------- 1 root root 20275516160 May 19 20:43 wikipedia-train.arrow -rw------- 1 root root 1135 May 19 20:43 dataset_info.json</p>",
+      "title": "How to use wikipedia data downloaded from Hugging face in pyspark?",
+      "content": "<p>Hi!</p><p>I am following -&nbsp;<a href=\"https://huggingface.co/datasets/wikipedia/blob/main/README.md\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">https://huggingface.co/datasets/wikipedia/blob/main/README.md</a>&nbsp;, from hugging face to download dataset of wikipedia , for NLP</p><p>I ran the below command as per the hugging face to downlaod dataset</p><p>from datasets import load_dataset load_dataset(\"wikipedia\", \"20220301.en\")</p><p>These two files got downloaded , how do i use this file (wikipedia-train.arrow) to read the data in pyspark</p><blockquote>total 19800320 -rw------- 1 root root 20275516160 May 19 20:43 wikipedia-train.arrow -rw------- 1 root root 1135 May 19 20:43 dataset_info.json</blockquote><p><a href=\"https://i.stack.imgur.com/doeNj.png\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">data set is like this from hugging face for wikipedia</a></p><p>I am trying to read this wikipedia-train.arrow as parquet</p><blockquote>f = spark.read.parquet(\"dbfs:/databricks/wikipedia-train.arrow\")</blockquote><blockquote>-rw------- 1 root root 20275516160 May 19 20:43 wikipedia-train.arrow -rw------- 1 root root 1135 May 19 20:43 dataset_info.json</blockquote>",
       "tag": "nlp",
       "userId": "1J__qRljs8mXF3k5UiA-W",
       "datePosted": "2023-05-20T07:41:47.578Z",
@@ -190,7 +204,7 @@
           "rating": 0
         }
       ],
-      "dateEdited": "2023-05-20T08:51:42.986Z"
+      "dateEdited": "2023-05-22T06:34:47.492Z"
     },
     {
       "id": "SbEVp9czazw4Mx7aHIuo8",
@@ -204,6 +218,14 @@
         {
           "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
           "rating": 0
+        },
+        {
+          "userId": "Erb8FeeTAYgttYuL4V2fc",
+          "rating": 1
+        },
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
         }
       ]
     }
@@ -383,7 +405,12 @@
       "content": "To handle click events in React, you can follow these general steps:\n1. Attach Event Handlers: In your React component, attach event handlers to the desired elements or components where you want to handle click events. This is typically done by adding event listener props, such as onClick, to the relevant JSX elements.\n2. Define Event Handler Functions: Declare functions that will be called when the click event occurs. These functions will define the behavior or actions you want to perform when the event is triggered.\n3. Access Event Information: Inside your event handler function, you can access event information, such as the target element, event type, or event properties, through the event object passed as an argument. This information can be used to determine how to handle the event.\n4. Handle Event Logic: Within the event handler function, write the logic to handle the click event. This may involve updating component state, making API requests, modifying data, navigating to different views, or triggering other actions based on the event.\n5. Clean Up (if necessary): If there are any clean-up tasks required when the component is unmounted or when the event handling is no longer needed, you can implement those in the appropriate React lifecycle methods or React hooks, such as componentWillUnmount or useEffect.\n\nIt's important to note that React handles event delegation, meaning you can attach event handlers to parent components and handle click events from child components as well. This allows for more flexible event handling and component composition.\nRemember to consider best practices for handling events in React, such as avoiding inline event handler definitions, passing data to event handlers, and optimizing performance by avoiding excessive re-rendering.\nWhile code examples can provide more specific guidance, I hope this general overview helps you understand the steps involved in handling click events in React.",
       "datePosted": "2023-05-18T13:15:20.116Z",
       "isEdited": false,
-      "ratings": []
+      "ratings": [
+        {
+          "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
+          "rating": 1
+        }
+      ]
     },
     {
       "id": "KYnmlFxwuU5MWfEbnkJ9c",
@@ -405,6 +432,14 @@
         {
           "userId": "ncxeJ_Pl2ubsKyFouZ7aK",
           "rating": 0
+        },
+        {
+          "userId": "Erb8FeeTAYgttYuL4V2fc",
+          "rating": 1
+        },
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
         }
       ],
       "dateEdited": "2023-05-20T18:51:49.187Z"
