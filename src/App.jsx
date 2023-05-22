@@ -63,11 +63,11 @@ function App() {
     },
     {
       path: '/login',
-      element: <LoginPage />,
+      element: authUser ? <Navigate to='/' /> : <LoginPage />,
     },
     {
       path: '/signup',
-      element: <SignupPage />,
+      element: authUser ? <Navigate to='/' /> : <SignupPage />,
     },
   ])
   return <RouterProvider router={router} />

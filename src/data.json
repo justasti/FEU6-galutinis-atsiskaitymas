@@ -192,7 +192,7 @@
     },
     {
       "id": "_a-HMp-n7IFtGApqtbdbX",
-      "title": "How to use wikipedia data downloaded from Hugging face in pyspark",
+      "title": "How to use wikipedia data downloaded from Hugging face in pyspark?",
       "content": "<p>Hi!</p><p>I am following -&nbsp;<a href=\"https://huggingface.co/datasets/wikipedia/blob/main/README.md\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">https://huggingface.co/datasets/wikipedia/blob/main/README.md</a>&nbsp;, from hugging face to download dataset of wikipedia , for NLP</p><p>I ran the below command as per the hugging face to downlaod dataset</p><p>from datasets import load_dataset load_dataset(\"wikipedia\", \"20220301.en\")</p><p>These two files got downloaded , how do i use this file (wikipedia-train.arrow) to read the data in pyspark</p><blockquote>total 19800320 -rw------- 1 root root 20275516160 May 19 20:43 wikipedia-train.arrow -rw------- 1 root root 1135 May 19 20:43 dataset_info.json</blockquote><p><a href=\"https://i.stack.imgur.com/doeNj.png\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">data set is like this from hugging face for wikipedia</a></p><p>I am trying to read this wikipedia-train.arrow as parquet</p><blockquote>f = spark.read.parquet(\"dbfs:/databricks/wikipedia-train.arrow\")</blockquote><blockquote>-rw------- 1 root root 20275516160 May 19 20:43 wikipedia-train.arrow -rw------- 1 root root 1135 May 19 20:43 dataset_info.json</blockquote>",
       "tag": "nlp",
       "userId": "1J__qRljs8mXF3k5UiA-W",
@@ -204,7 +204,7 @@
           "rating": 0
         }
       ],
-      "dateEdited": "2023-05-22T05:46:05.090Z"
+      "dateEdited": "2023-05-22T06:34:47.492Z"
     },
     {
       "id": "SbEVp9czazw4Mx7aHIuo8",
@@ -221,6 +221,10 @@
         },
         {
           "userId": "Erb8FeeTAYgttYuL4V2fc",
+          "rating": 1
+        },
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
           "rating": 1
         }
       ]
@@ -431,6 +435,10 @@
         },
         {
           "userId": "Erb8FeeTAYgttYuL4V2fc",
+          "rating": 1
+        },
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
           "rating": 1
         }
       ],
