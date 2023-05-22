@@ -1,7 +1,7 @@
 import { useGetQuestionsTagsQuery } from '../../questions/questions.api'
 import { StyledSideNav } from './sidenav.styles'
 import { Button } from '../../'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 const SideNav = () => {
   const { data: tags } = useGetQuestionsTagsQuery()
   return (
@@ -17,7 +17,7 @@ const SideNav = () => {
         <ul>
           {tags?.map((tag) => (
             <li key={tag}>
-              <Link to={`/questions/tag/${tag}`}>{tag}</Link>
+              <NavLink to={`/questions/tag/${tag}`}>{tag}</NavLink>
             </li>
           ))}
         </ul>

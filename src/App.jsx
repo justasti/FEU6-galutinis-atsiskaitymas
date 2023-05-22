@@ -49,6 +49,10 @@ function App() {
                 <Navigate to='/login' />
               ),
             },
+            {
+              path: 'tag/:tag',
+              element: <QuestionsList />,
+            },
           ],
         },
         {
