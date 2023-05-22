@@ -31,7 +31,7 @@ const questionsApi = createApi({
       }),
       invalidatesTags: ['Questions', 'Tags']
     }),
-    editQuestion: builder.mutation({
+    updateQuestion: builder.mutation({
       query: question => ({
         url: `/${question.id}`,
         method: 'PATCH',
@@ -45,9 +45,9 @@ const questionsApi = createApi({
         method: 'DELETE',
       }),
       invalidatesTags: ['Questions', 'Tags']
-    })
+    }),
   })
 })
 
-export const { useGetQuestionsQuery, useGetQuestionByIdQuery, useGetQuestionsTagsQuery, useGetQuestionByUserIdQuery, useAddNewQuestionMutation, useEditQuestionMutation, useDeleteQuestionMutation } = questionsApi
+export const { useGetQuestionsQuery, useGetQuestionByIdQuery, useGetQuestionsTagsQuery, useGetQuestionByUserIdQuery, useAddNewQuestionMutation, useUpdateQuestionMutation, useDeleteQuestionMutation, } = questionsApi
 export default questionsApi

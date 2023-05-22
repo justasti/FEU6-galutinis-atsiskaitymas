@@ -5,7 +5,7 @@ import {
   useAddNewQuestionMutation,
   useGetQuestionsTagsQuery,
   useGetQuestionsQuery,
-  useEditQuestionMutation,
+  useUpdateQuestionMutation,
 } from '../questions.api'
 import { useState, useEffect } from 'react'
 import ReactQuill from 'react-quill'
@@ -15,16 +15,21 @@ import { useNavigate, useParams } from 'react-router'
 
 const AddQuestionPage = () => {
   const navigate = useNavigate()
-  const { id } = useParams()
-  const [addQuestion] = useAddNewQuestionMutation()
-  const [editQuestion] = useEditQuestionMutation()
-  const { data: tags, isLoading } = useGetQuestionsTagsQuery()
-  const { authUser } = useSelector((state) => state.users)
+  const [fieldBlurred, setFieldBlurred] = useState({
+    title: false,
+    tag: false,
+    content: false,
+  })
   const [tag, setTag] = useState('')
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [errorSubmitting, setErrorSubmitting] = useState(false)
   const [existingQuestion, setExistingQuestion] = useState(null)
+  const [addQuestion] = useAddNewQuestionMutation()
+  const [updateQuestion] = useUpdateQuestionMutation()
+  const { id } = useParams()
+  const { authUser } = useSelector((state) => state.users)
+  const { data: tags, isLoading } = useGetQuestionsTagsQuery()
   const { data: questions, isLoading: questionsLoading } =
     useGetQuestionsQuery()
 
@@ -102,7 +107,7 @@ const AddQuestionPage = () => {
         isEdited: true,
         dateEdited: new Date().toISOString(),
       }
-      editQuestion(updatedQuestion)
+      updateQuestion(updatedQuestion)
     } else {
       const newQuestion = {
         id: newId,
@@ -123,14 +128,20 @@ const AddQuestionPage = () => {
     <StyledQuestionForm onSubmit={handleSubmit}>
       <div className='group'>
         <label htmlFor='title'>Question Title</label>
-        <Input onChange={handleTitleChange} value={title} id='title' />
-        {errorSubmitting && !title && (
+        <Input
+          onChange={handleTitleChange}
+          value={title}
+          id='title'
+          onBlur={() => setFieldBlurred((prev) => ({ ...prev, title: true }))}
+        />
+        {fieldBlurred.title && !title && (
           <ErrorMessage pos='normal'>Required field</ErrorMessage>
         )}
       </div>
       <div className='group'>
         <label htmlFor='react-select-2-input'>Choose a Tag</label>
         <CreatableSelect
+          onBlur={() => setFieldBlurred((prev) => ({ ...prev, tag: true }))}
           id='tag'
           placeholder='Select tag from list or start typing to create new...'
           isClearable
@@ -139,19 +150,20 @@ const AddQuestionPage = () => {
           value={tag}
           styles={customStyles}
         />
-        {errorSubmitting && !tag && (
+        {fieldBlurred.tag && !tag && (
           <ErrorMessage pos='normal'>Select a Tag</ErrorMessage>
         )}
       </div>
       <div className='group'>
         <label htmlFor='content'>Describe Your Issue</label>
         <ReactQuill
+          onBlur={() => setFieldBlurred((prev) => ({ ...prev, content: true }))}
           theme='snow'
           modules={modules}
           value={content}
           onChange={setContent}
         />
-        {errorSubmitting && !content && (
+        {fieldBlurred.content && !content && (
           <ErrorMessage pos='normal' style={{ marginTop: '15px' }}>
             Required field
           </ErrorMessage>
