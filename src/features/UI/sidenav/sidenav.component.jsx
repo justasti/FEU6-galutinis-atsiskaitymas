@@ -13,7 +13,7 @@ const SideNav = () => {
         <li>
           <Link to='/'>All</Link>
         </li>
-        <li>Tags</li>
+        <li>Tags:</li>
         <ul>
           {tags?.map((tag) => (
             <li key={tag}>
