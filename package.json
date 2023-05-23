@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently --kill-others \"vite\" \"json-server -w src/data.json\"",
+    "dev": "concurrently --kill-others \"json-server -w src/data.json\" \"vite\"",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
