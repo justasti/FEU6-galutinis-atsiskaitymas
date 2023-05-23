@@ -86,12 +86,33 @@ const QuestionDetails = ({ id }) => {
   return (
     <>
       <DetailedQuestionContainer>
-        <h2>{detailedQuestion.title}</h2>
-        <div className='top-row'>
-          <div className='date-info'>
-            <p>Asked {askedDateDifference}</p>
-            {parsedEditedDate && <p>Edited {parsedEditedDate}</p>}
+        <div className='left'>
+          <img src={askedBy?.avatarUrl} alt={askedBy?.username} />
+          <div className='ratings'>
+            <FontAwesomeIcon
+              icon={faCaretUp}
+              className={existingRating?.rating === 1 ? 'active' : undefined}
+              onClick={() => rate(1)}
+            />
+            <span>{questionRatings}</span>
+            <FontAwesomeIcon
+              icon={faCaretDown}
+              className={existingRating?.rating === -1 ? 'active' : undefined}
+              onClick={() => rate(-1)}
+            />
           </div>
+        </div>
+        <div className='right'>
+          <h2 className='title'>{detailedQuestion.title}</h2>
+          <p className='date-info'>
+            Asked by{' '}
+            <Link to={`/user/${askedBy?.id}`}>{askedBy?.username}</Link>{' '}
+            {askedDateDifference}
+            {parsedEditedDate && (
+              <span className='edited-on'> | edited on {parsedEditedDate}</span>
+            )}
+          </p>
+          <QuestionTag tag={detailedQuestion.tag} />
           {authUser?.id === askedBy?.id && (
             <div className='actions'>
               <span
@@ -100,50 +121,19 @@ const QuestionDetails = ({ id }) => {
                   navigate('/')
                 }}
               >
-                <FontAwesomeIcon icon={faTrash} />
+                <FontAwesomeIcon icon={faTrash} /> Delete
               </span>
               <span onClick={() => navigate('edit')}>
-                <FontAwesomeIcon icon={faPencilAlt} />
+                <FontAwesomeIcon icon={faPencilAlt} /> Edit
               </span>
             </div>
           )}
-        </div>
-        <div className='question-info'>
-          <div className='ratings'>
-            <FontAwesomeIcon
-              icon={faCaretUp}
-              style={{ color: existingRating?.rating === 1 ? '#f00' : '333' }}
-              onClick={() => rate(1)}
-            />
-            <span>{questionRatings}</span>
-            <FontAwesomeIcon
-              icon={faCaretDown}
-              style={{ color: existingRating?.rating === -1 ? '#f00' : '333' }}
-              onClick={() => rate(-1)}
-            />
-          </div>
-          <div className='question-content'>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(detailedQuestion.content),
-              }}
-            >
-              {}
-            </p>
-            <QuestionTag tag={detailedQuestion.tag} />
-          </div>
-          <div className='author-info'>
-            <p>asked {parsedAskedDate}</p>
-            <div>
-              <img src={askedBy?.avatarUrl} alt={askedBy?.username} />
-              <p>
-                by{' '}
-                <strong>
-                  <Link to={`/user/${askedBy?.id}`}>{askedBy?.username}</Link>
-                </strong>
-              </p>
-            </div>
-          </div>
+          <div
+            className='question-content'
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(detailedQuestion.content),
+            }}
+          ></div>
         </div>
       </DetailedQuestionContainer>
     </>
