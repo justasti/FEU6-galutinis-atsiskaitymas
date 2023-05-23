@@ -13,6 +13,7 @@ const Header = () => {
   const { authUser } = useSelector((state) => state.users)
   const handleSearch = (e) => {
     e.preventDefault()
+    if (!searchPhrase) return
     navigate(`/questions/search?q=${searchPhrase}`)
     setSearchPhrase('')
   }
