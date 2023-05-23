@@ -90,7 +90,6 @@ const Answer = ({ answer, onEditAnswer }) => {
             <span
               onClick={() => {
                 deleteAnswer(answer.id)
-                navigate('/')
               }}
             >
               <FontAwesomeIcon icon={faTrash} /> Delete
@@ -102,71 +101,12 @@ const Answer = ({ answer, onEditAnswer }) => {
         )}
         <div
           className='answer-content'
+          data-answer-id={answer.id}
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(answer.content),
           }}
         ></div>
       </div>
-      {/* <div className='ratings'>
-        <FontAwesomeIcon
-          icon={faCaretUp}
-          style={{ color: existingRating?.rating === 1 ? '#f00' : '333' }}
-          onClick={() => rate(1)}
-        />
-        <span>{answerRatings}</span>
-        <FontAwesomeIcon
-          icon={faCaretDown}
-          style={{ color: existingRating?.rating === -1 ? '#f00' : '333' }}
-          onClick={() => rate(-1)}
-        />
-      </div>
-      <div className='answer-content'>
-        <p
-          data-answer-id={answer.id}
-          dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(answer.content),
-          }}
-        ></p>
-        {answer.isEdited && (
-          <div className='date-info'>
-            {parsedEditedDate && (
-              <p>
-                <FontAwesomeIcon icon={faPen} /> edited {parsedEditedDate}
-              </p>
-            )}
-          </div>
-        )}
-      </div>
-      <div>
-        <div className='author-info'>
-          <p>answered {parsedAskedDate}</p>
-          <div>
-            <img src={answeredBy?.avatarUrl} alt={answeredBy?.username} />
-            <p>
-              by{' '}
-              <strong>
-                <Link to={`/user/${answeredBy?.id}`}>
-                  {answeredBy?.username}
-                </Link>
-              </strong>
-            </p>
-          </div>
-        </div>
-        <div className='actions'>
-          {authUser?.id === answeredBy?.id && (
-            <>
-              <p className='remove' onClick={() => deleteAnswer(answer.id)}>
-                <FontAwesomeIcon icon={faTrashAlt} />
-                Remove Answer
-              </p>
-              <p className='edit' onClick={() => onEditAnswer(answer)}>
-                <FontAwesomeIcon icon={faPencilAlt} />
-                Edit Answer
-              </p>
-            </>
-          )}
-        </div>
-      </div> */}
     </AnswerContainer>
   )
 }
