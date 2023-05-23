@@ -15,6 +15,35 @@ export const StyledHeader = styled.header`
     height: 70px;
     padding-bottom: 10px;
   }
+  .search {
+    width: 300px;
+    position: relative;
+    #search-bar {
+      width: 100%;
+      padding: 5px 10px;
+      border-radius: 100px;
+      border: 1px solid #f48023;
+      &:focus {
+        outline: 2px solid #f48023;
+      }
+    }
+    button {
+      position: absolute;
+      inset: 50% 0 auto auto;
+      background-color: transparent;
+      border: none;
+      svg {
+        color: #f48023;
+        cursor: pointer;
+        transform: translate(-3px, -50%);
+        padding: 5px;
+        border-radius: 50%;
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
   .buttons-container {
     display: flex;
     gap: 15px;

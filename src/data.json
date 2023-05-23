@@ -614,6 +614,13 @@
       "avatarUrl": "https://ui-avatars.com/api/?name=Judita&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "password": "asdasd",
       "id": "ncxeJ_Pl2ubsKyFouZ7aK"
+    },
+    {
+      "email": "fake@email.com",
+      "username": "fakeUser",
+      "avatarUrl": "https://ui-avatars.com/api/?name=fakeUser&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
+      "password": "123123",
+      "id": "7TxoEH9rkc1QJXGT74JTH"
     }
   ]
 }

@@ -53,6 +53,10 @@ function App() {
               path: 'tag/:tag',
               element: <QuestionsList />,
             },
+            {
+              path: 'search',
+              element: <QuestionsList />,
+            },
           ],
         },
         {
