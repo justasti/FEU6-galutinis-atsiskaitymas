@@ -46,6 +46,7 @@ export const StyledHeader = styled.header`
   }
   .buttons-container {
     display: flex;
+    align-items: center;
     gap: 15px;
   }
 `
