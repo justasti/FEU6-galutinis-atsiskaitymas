@@ -118,7 +118,12 @@
       "userId": "rSepmZNHpOU5YRQmEfWGk",
       "datePosted": "2023-04-22T21:46:00Z",
       "isEdited": false,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "7TxoEH9rkc1QJXGT74JTH",
+          "rating": 1
+        }
+      ],
       "tag": "git"
     },
     {
@@ -225,6 +230,10 @@
         },
         {
           "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
+        },
+        {
+          "userId": "7TxoEH9rkc1QJXGT74JTH",
           "rating": 1
         }
       ]
@@ -363,7 +372,12 @@
       "content": "To create a new branch in Git, you can use the git branch command. Here's how you can do it:\n\n1. Make sure you are in the desired Git repository directory.\n2. Check the current branch you are on by using the command: git branch\nThe branch with an asterisk (*) next to it represents the current branch.\n3. Create a new branch using the git branch command followed by the branch name. For example, to create a branch named \"feature/new-branch\", run: git branch feature/new-branch\n4. Switch to the newly created branch using the git checkout command: git checkout feature/new-branch\nAlternatively, you can combine branch creation and switching into a single command using the -b flag: git checkout -b feature/new-branch\n\nYou have now created and switched to the new branch. Any commits you make will be isolated to this branch.\nRemember to provide a descriptive and meaningful name for your branch, reflecting the purpose or feature you are working on.",
       "datePosted": "2023-05-18T13:03:38.350Z",
       "isEdited": false,
-      "ratings": []
+      "ratings": [
+        {
+          "userId": "7TxoEH9rkc1QJXGT74JTH",
+          "rating": 1
+        }
+      ]
     },
     {
       "id": "Jg6UuXUyiWjLXUKgy87OU",
@@ -440,6 +454,10 @@
         {
           "userId": "1J__qRljs8mXF3k5UiA-W",
           "rating": 1
+        },
+        {
+          "userId": "7TxoEH9rkc1QJXGT74JTH",
+          "rating": -1
         }
       ],
       "dateEdited": "2023-05-20T18:51:49.187Z"
@@ -454,6 +472,10 @@
       "ratings": [
         {
           "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": -1
+        },
+        {
+          "userId": "7TxoEH9rkc1QJXGT74JTH",
           "rating": -1
         }
       ],
@@ -614,6 +636,13 @@
       "avatarUrl": "https://ui-avatars.com/api/?name=Judita&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
       "password": "asdasd",
       "id": "ncxeJ_Pl2ubsKyFouZ7aK"
+    },
+    {
+      "email": "fake@email.com",
+      "username": "fakeUser",
+      "avatarUrl": "https://ui-avatars.com/api/?name=fakeUser&size=512&background=random&length=1&font-size=0.5&rounded=true&bold=true",
+      "password": "123123",
+      "id": "7TxoEH9rkc1QJXGT74JTH"
     }
   ]
 }

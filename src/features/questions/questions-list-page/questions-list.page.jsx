@@ -9,6 +9,7 @@ const QuestionsList = () => {
   const [sort, setSort] = useState('date')
   const [filter, setFilter] = useState(null)
   const [order, setOrder] = useState('desc')
+  const [search, setSearch] = useState('')
   const [params, setParams] = useSearchParams()
   const {
     data: questions,
@@ -21,8 +22,10 @@ const QuestionsList = () => {
   useEffect(() => {
     const sortParam = params.get('sort') || 'date'
     const orderParam = params.get('order') || 'desc'
+    const searchParam = params.get('q')
     setSort(sortParam)
     setOrder(orderParam)
+    setSearch(searchParam)
   }, [params])
 
   if (isError) return <h2>Error loading posts!</h2>
@@ -31,10 +34,15 @@ const QuestionsList = () => {
   let filteredQuestions = [...questions]
 
   if (tag) {
-    filteredQuestions = [...questions.filter((q) => q.tag === tag)]
+    filteredQuestions = filteredQuestions.filter((q) => q.tag === tag)
   }
 
-  if (sort || filter) {
+  if (sort || filter || search) {
+    if (search) {
+      filteredQuestions = [...questions].filter((q) =>
+        q.title.toLowerCase().includes(search.toLowerCase())
+      )
+    }
     if (sort === 'date') {
       filteredQuestions = filteredQuestions.sort((a, b) =>
         order === 'desc'
