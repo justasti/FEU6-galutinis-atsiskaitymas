@@ -110,6 +110,7 @@ export const DetailedQuestionContainer = styled.div`
         max-height: 300px;
         overflow: auto;
         width: 100%;
+        max-width: 800px;
         &::before {
           position: absolute;
           top: 5px;

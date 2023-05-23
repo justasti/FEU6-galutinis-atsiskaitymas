@@ -73,10 +73,6 @@ const QuestionDetails = ({ id }) => {
       includeSeconds: true,
     })
 
-  const parsedAskedDate = new Date(detailedQuestion?.datePosted).toLocaleString(
-    'lt-LT'
-  )
-
   const parsedEditedDate =
     detailedQuestion?.isEdited &&
     new Date(detailedQuestion.dateEdited).toLocaleString('lt-LT')

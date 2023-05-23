@@ -6,6 +6,7 @@ import {
   faCaretUp,
   faPen,
   faPencilAlt,
+  faTrash,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -23,7 +24,9 @@ const Answer = ({ answer, onEditAnswer }) => {
   const [deleteAnswer] = useDeleteAnswerMutation()
   const [updateAnswer] = useUpdateAnswerMutation()
 
-  const parsedAskedDate = new Date(answer?.datePosted).toLocaleString('lt-LT')
+  const parsedAnsweredDate = new Date(answer?.datePosted).toLocaleString(
+    'lt-LT'
+  )
 
   const parsedEditedDate =
     answer?.isEdited && new Date(answer.dateEdited).toLocaleString('lt-LT')
@@ -57,7 +60,54 @@ const Answer = ({ answer, onEditAnswer }) => {
   const answerRatings = answer?.ratings.reduce((a, v) => a + v.rating, 0)
   return (
     <AnswerContainer>
-      <div className='ratings'>
+      <div className='left'>
+        <img src={answeredBy?.avatarUrl} alt={answeredBy?.username} />
+        <div className='ratings'>
+          <FontAwesomeIcon
+            icon={faCaretUp}
+            className={existingRating?.rating === 1 ? 'active' : undefined}
+            onClick={() => rate(1)}
+          />
+          <span>{answerRatings}</span>
+          <FontAwesomeIcon
+            icon={faCaretDown}
+            className={existingRating?.rating === -1 ? 'active' : undefined}
+            onClick={() => rate(-1)}
+          />
+        </div>
+      </div>
+      <div className='right'>
+        <p className='date-info'>
+          Answered by{' '}
+          <Link to={`/user/${answeredBy?.id}`}>{answeredBy?.username}</Link> on{' '}
+          {parsedAnsweredDate}
+          {parsedEditedDate && (
+            <span className='edited-on'> | edited on {parsedEditedDate}</span>
+          )}
+        </p>
+        {authUser?.id === answeredBy?.id && (
+          <div className='actions'>
+            <span
+              onClick={() => {
+                deleteAnswer(answer.id)
+                navigate('/')
+              }}
+            >
+              <FontAwesomeIcon icon={faTrash} /> Delete
+            </span>
+            <span onClick={() => onEditAnswer(answer)}>
+              <FontAwesomeIcon icon={faPencilAlt} /> Edit
+            </span>
+          </div>
+        )}
+        <div
+          className='answer-content'
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(answer.content),
+          }}
+        ></div>
+      </div>
+      {/* <div className='ratings'>
         <FontAwesomeIcon
           icon={faCaretUp}
           style={{ color: existingRating?.rating === 1 ? '#f00' : '333' }}
@@ -116,7 +166,7 @@ const Answer = ({ answer, onEditAnswer }) => {
             </>
           )}
         </div>
-      </div>
+      </div> */}
     </AnswerContainer>
   )
 }
