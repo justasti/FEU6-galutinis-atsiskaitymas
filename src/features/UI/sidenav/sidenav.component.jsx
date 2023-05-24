@@ -7,7 +7,7 @@ const SideNav = () => {
   return (
     <StyledSideNav>
       <Link to='/questions/add'>
-        <Button variant='inverted'>New Discussion</Button>
+        <Button variant='inverted'>New&nbsp;Discussion</Button>
       </Link>
       <ul>
         <li>

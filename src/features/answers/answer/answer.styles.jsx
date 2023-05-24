@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const AnswerContainer = styled.div`
+  background-color: #fff;
+  padding: 10px;
   margin-left: 90px;
   margin-block: 30px;
   display: flex;
@@ -70,11 +72,15 @@ export const AnswerContainer = styled.div`
       }
     }
     .answer-content {
-      border-block: 1px dashed #888;
+      border-top: 1px dashed #888;
+      border-radius: 16px;
       padding-block: 16px;
       flex: 1;
       display: flex;
       flex-direction: column;
+      p {
+        line-height: 1.75;
+      }
       ul,
       ol {
         margin-left: 20px;

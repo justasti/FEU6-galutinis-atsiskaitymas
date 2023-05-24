@@ -9,7 +9,9 @@ export const NewAnswerForm = styled.form`
   .quill {
     width: 100%;
     height: 250px;
+    background-color: #fff;
     .ql-editor {
+      background-color: #fff;
       margin-bottom: 50px;
     }
   }

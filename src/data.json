@@ -166,7 +166,12 @@
       "userId": "FeatN2kjW2uGbSmpFux3r",
       "datePosted": "2023-04-11T11:46:03Z",
       "isEdited": false,
-      "ratings": [],
+      "ratings": [
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
+        }
+      ],
       "tag": "security"
     },
     {
@@ -454,10 +459,11 @@
       "id": "KYnmlFxwuU5MWfEbnkJ9c",
       "userId": "1J__qRljs8mXF3k5UiA-W",
       "questionId": "9WGYw_pZPPplIhQcFCbD-",
-      "content": "Here are some best practices for securing an API:\n\n1. Authentication: Implement a robust authentication mechanism to verify the identity of clients accessing your API. Common authentication methods include API keys, tokens (such as JWT), OAuth, or username/password combinations. Choose an authentication method that fits your specific requirements.\n2. Authorization: Once a client is authenticated, enforce authorization rules to determine what resources and actions they are allowed to access. Role-based access control (RBAC) or attribute-based access control (ABAC) can be used to manage permissions and restrict access to specific API endpoints.\n3. Use HTTPS: Always use HTTPS (HTTP over SSL/TLS) to encrypt the communication between clients and your API server. This ensures that data transmitted over the network is protected from eavesdropping and tampering.\n4. Input Validation: Validate and sanitize all user input and API requests to prevent common security vulnerabilities such as injection attacks (e.g., SQL injection, XSS). Implement proper input validation techniques such as input sanitization, parameterized queries, and output encoding to protect against these risks.\n5. Rate Limiting: Implement rate limiting mechanisms to prevent abuse, brute force attacks, or denial-of-service (DoS) attacks. By limiting the number of requests from a single client within a specific time frame, you can protect your API server from excessive traffic and resource depletion.",
+      "content": "<p>Here are some best practices for securing an API: </p><p><strong>1. Authentication</strong>: Implement a robust authentication mechanism to verify the identity of clients accessing your API. Common authentication methods include API keys, tokens (such as JWT), OAuth, or username/password combinations. Choose an authentication method that fits your specific requirements. </p><p><strong>2. Authorization:</strong> Once a client is authenticated, enforce authorization rules to determine what resources and actions they are allowed to access. Role-based access control (RBAC) or attribute-based access control (ABAC) can be used to manage permissions and restrict access to specific API endpoints. </p><p><strong>3. Use HTTPS</strong>: Always use HTTPS (HTTP over SSL/TLS) to encrypt the communication between clients and your API server. This ensures that data transmitted over the network is protected from eavesdropping and tampering. </p><p><strong>4. Input Validation</strong>: Validate and sanitize all user input and API requests to prevent common security vulnerabilities such as injection attacks (e.g., SQL injection, XSS). Implement proper input validation techniques such as input sanitization, parameterized queries, and output encoding to protect against these risks. </p><p><strong>5. Rate Limiting</strong>: Implement rate limiting mechanisms to prevent abuse, brute force attacks, or denial-of-service (DoS) attacks. By limiting the number of requests from a single client within a specific time frame, you can protect your API server from excessive traffic and resource depletion.</p>",
       "datePosted": "2023-05-19T08:39:05.020Z",
-      "isEdited": false,
-      "ratings": []
+      "isEdited": true,
+      "ratings": [],
+      "dateEdited": "2023-05-24T04:12:56.724Z"
     },
     {
       "id": "HLFI3KTsZ8FFAGAHeZMgU",
@@ -515,7 +521,7 @@
       "ratings": [
         {
           "userId": "1J__qRljs8mXF3k5UiA-W",
-          "rating": 1
+          "rating": -1
         },
         {
           "userId": "wZKXG_OQ6pUSNGW-_wlY7",

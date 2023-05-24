@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const DetailedQuestionContainer = styled.div`
   display: flex;
   gap: 20px;
+  background-color: #fff;
+  padding: 10px;
+  padding-bottom: 0;
+  border-radius: 16px;
   .left {
     width: 70px;
     display: flex;
@@ -75,11 +79,14 @@ export const DetailedQuestionContainer = styled.div`
       }
     }
     .question-content {
-      border-block: 1px dashed #888;
+      border-top: 1px dashed #888;
       padding-block: 16px;
       flex: 1;
       display: flex;
       flex-direction: column;
+      p {
+        line-height: 1.75;
+      }
       ul,
       ol {
         margin-left: 20px;
