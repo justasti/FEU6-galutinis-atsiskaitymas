@@ -9,7 +9,7 @@ export const AnswerContainer = styled.div`
     width: 50px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
     img {
       width: 100%;
       aspect-ratio: 1;
@@ -40,7 +40,6 @@ export const AnswerContainer = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     .date-info {
       color: #aaa;
       margin-bottom: 12px;
@@ -73,6 +72,7 @@ export const AnswerContainer = styled.div`
     .answer-content {
       border-block: 1px dashed #888;
       padding-block: 16px;
+      flex: 1;
       display: flex;
       flex-direction: column;
       ul,

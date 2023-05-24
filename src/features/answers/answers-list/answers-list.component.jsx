@@ -26,7 +26,7 @@ const AnswersList = ({ id }) => {
 
   return (
     <>
-      <h2>
+      <h2 style={{ marginBlock: 30 }}>
         {answers.length} answer{answers.length > 1 && 's'}
       </h2>
       {answers.map((answer) => (
