@@ -23,7 +23,7 @@ export const DetailedQuestionContainer = styled.div`
       font-size: 2.5rem;
       font-weight: 300;
       span {
-        margin-block: -15px;
+        margin-block: -10px;
       }
       svg {
         cursor: pointer;
@@ -38,7 +38,6 @@ export const DetailedQuestionContainer = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
     h2 {
       font-size: 2rem;
       font-weight: 500;
@@ -78,6 +77,7 @@ export const DetailedQuestionContainer = styled.div`
     .question-content {
       border-block: 1px dashed #888;
       padding-block: 16px;
+      flex: 1;
       display: flex;
       flex-direction: column;
       ul,
