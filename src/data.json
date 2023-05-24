@@ -122,6 +122,10 @@
         {
           "userId": "7TxoEH9rkc1QJXGT74JTH",
           "rating": 1
+        },
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
         }
       ],
       "tag": "git"
@@ -237,6 +241,26 @@
           "rating": 1
         }
       ]
+    },
+    {
+      "id": "Zc9Jp26iyIwGY0GxCyV3r",
+      "title": "Pulse effect CSS around button not working",
+      "content": "<p><span style=\"color: rgb(35, 38, 41); background-color: rgb(255, 255, 255);\">I am trying to create a pulse effect around this button. Unfortunately its not working... and I can't find the error:</span></p><pre class=\"ql-syntax\" spellcheck=\"false\">#pulse {\n  width: 50px;\n  height: 100%;\n}\n\n#show {\n  float: left;\n  margin-top: -200px;\n  margin-left: 10px;\n  border: none;\n  height: 40px;\n  width: 40px;\n  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);\n  border-radius: 50%;\n  background: none;\n  cursor: pointer;\n  background-image: url('bilder/showleftside.svg');\n  background-repeat: no-repeat;\n  background-size: cover;\n  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);\n  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);\n  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);\n  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);\n}\n\n@keyframes pulse {\n  0% {\n    transform: scale(1, 1);\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    transform: scale(1.5);\n    opacity: 0;\n  }\n}\n</pre><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">&lt;div id=\"pulse\"&gt;\n  &lt;button id=\"show\" type=\"button\" onclick=\"\"&gt;&lt;/button&gt;\n&lt;/div&gt;\n</pre>",
+      "tag": "css",
+      "userId": "1J__qRljs8mXF3k5UiA-W",
+      "datePosted": "2023-05-23T10:20:45.521Z",
+      "isEdited": true,
+      "ratings": [
+        {
+          "userId": "wZKXG_OQ6pUSNGW-_wlY7",
+          "rating": 1
+        },
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 0
+        }
+      ],
+      "dateEdited": "2023-05-23T10:21:09.463Z"
     }
   ],
   "answers": [
@@ -480,6 +504,25 @@
         }
       ],
       "dateEdited": "2023-05-20T07:56:59.238Z"
+    },
+    {
+      "id": "QR-paUFJM42i6ihj6KUki",
+      "userId": "wZKXG_OQ6pUSNGW-_wlY7",
+      "questionId": "Zc9Jp26iyIwGY0GxCyV3r",
+      "content": "<p>You defined a animation with name&nbsp;<code style=\"color: var(--black-800); background-color: var(--black-075);\">pulse</code>. What this pulse animation is supposed to do is missing in your code. Add&nbsp;<strong>keyframes</strong>&nbsp;to define your animation.</p><p><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--theme-link-color);\">https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes</a></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">#pulse {\n    width: 50px; \n    height: 100%; \n}\n\n#show { \n    float: left; \n    margin: 20px;\n\n    border: 1px solid #ddd;\n    height: 40px; \n    width: 40px;\n    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);\n    border-radius: 50%;\n    background: none;\n    cursor: pointer;\n\n    background-image: url('bilder/showleftside.svg');\n    background-repeat: no-repeat;\n    background-size: cover;\n\n    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);\n    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);\n    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);\n    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);\n}\n\n@keyframes pulse {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.2);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n</pre><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">&lt;div id=\"pulse\"&gt;\n    &lt;button id=\"show\" type=\"button\"&gt;X&lt;/button&gt;\n &lt;/div&gt;\n</pre>",
+      "datePosted": "2023-05-23T10:22:02.471Z",
+      "isEdited": true,
+      "ratings": [
+        {
+          "userId": "1J__qRljs8mXF3k5UiA-W",
+          "rating": 1
+        },
+        {
+          "userId": "wZKXG_OQ6pUSNGW-_wlY7",
+          "rating": 0
+        }
+      ],
+      "dateEdited": "2023-05-23T18:25:49.599Z"
     }
   ],
   "users": [

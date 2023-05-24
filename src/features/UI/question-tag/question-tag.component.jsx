@@ -3,7 +3,7 @@ import { StyledQuestionTag } from './question-tag.styles'
 
 const QuestionTag = ({ tag }) => {
   return (
-    <Link to={`/questions/tag/${tag}`}>
+    <Link className='tag' to={`/questions/tag/${tag}`}>
       <StyledQuestionTag>{tag}</StyledQuestionTag>
     </Link>
   )
